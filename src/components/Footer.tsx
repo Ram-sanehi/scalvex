@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
+import Medium from '@/components/ui/medium';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-primary text-primary-foreground text-sm">
+      <div className="container-custom py-3 md:py-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4 text-primary-foreground">Scalvex</h3>
-            <p className="text-primary-foreground/80 max-w-md">
+            <h3 className="text-lg font-bold mb-2 text-primary-foreground">Scalvex</h3>
+            <p className="text-primary-foreground/80 max-w-md text-sm">
               SEO-driven websites for service businesses that want consistent leads. 
               Built with performance and visibility from day one.
             </p>
@@ -19,15 +20,17 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-primary-foreground">
+            <h4 className="text-xs font-semibold uppercase tracking-wider mb-2 text-primary-foreground">
               Quick Links
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {[
+                { name: 'Home', path: '/' },
                 { name: 'Services', path: '/services' },
                 { name: 'Work', path: '/work' },
                 { name: 'Process', path: '/process' },
                 { name: 'About', path: '/about' },
+                { name: 'Blog', path: '/blog' },
                 { name: 'Contact', path: '/contact' },
               ].map((link) => (
                 <li key={link.path}>
@@ -44,10 +47,10 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-primary-foreground">
+            <h4 className="text-xs font-semibold uppercase tracking-wider mb-2 text-primary-foreground">
               Legal
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
                 <Link
                   to="/privacy"
@@ -69,14 +72,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/80 text-sm">
+        <div className="mt-2 pt-2 border-t border-primary-foreground/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-1">
+            <p className="text-primary-foreground/80 text-xs">
               © {currentYear} Scalvex. All rights reserved.
             </p>
             
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
+              <a
+                href="https://medium.com/@scalvex"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="Medium"
+              >
+                <Medium className="h-4 w-4" />
+              </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -84,7 +96,7 @@ const Footer = () => {
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-4 w-4" />
               </a>
               <a
                 href="https://twitter.com"
@@ -93,7 +105,25 @@ const Footer = () => {
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="h-5 w-5" />
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
               </a>
             </div>
           </div>

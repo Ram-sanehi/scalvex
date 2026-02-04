@@ -18,8 +18,6 @@ const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
   email: z.string().trim().email('Please enter a valid email').max(255, 'Email must be less than 255 characters'),
   company: z.string().trim().max(100, 'Company name must be less than 100 characters').optional(),
-  projectType: z.string().min(1, 'Please select a project type'),
-  budget: z.string().min(1, 'Please select an estimated budget'),
   message: z.string().trim().min(10, 'Message must be at least 10 characters').max(2000, 'Message must be less than 2000 characters'),
 });
 
@@ -35,8 +33,6 @@ const Contact = () => {
       name: '',
       email: '',
       company: '',
-      projectType: '',
-      budget: '',
       message: '',
     },
   });
@@ -69,24 +65,7 @@ const Contact = () => {
     }
   };
 
-  const projectTypes = [
-    'New Business Website',
-    'Website Redesign',
-    'Landing Page',
-    'Startup / MVP Build',
-    'SEO Services',
-    'Performance Optimization',
-    'Other',
-  ];
 
-  const budgetRanges = [
-    'Under $2,500',
-    '$2,500 - $5,000',
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    '$25,000+',
-    'Not sure yet',
-  ];
 
   return (
     <Layout>
@@ -95,10 +74,17 @@ const Contact = () => {
         <div className="container-custom">
           <FadeInSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="mb-6">Let's Talk About Your Project</h1>
-              <p className="text-lg md:text-xl text-muted-foreground">
+              <h2 className="mb-4 text-2xl font-semibold">Let's Talk About Your Project</h2>
+              <p className="text-base md:text-lg text-muted-foreground">
                 Tell us about your goals and we'll get back to you within 24–48 hours with actionable insights.
               </p>
+              <div className="mt-6 text-sm text-muted-foreground">
+                <span className="block mb-1">We take on a limited number of projects to maintain quality.</span>
+                <span className="block mb-1">We don’t offer templates, rushed builds, or SEO as an afterthought.</span>
+                <span className="block mb-1">Projects are handled directly by the founder with clear milestones.</span>
+                <span className="block mb-1">Pricing reflects scope, complexity, and long-term value.</span>
+                <span className="block mb-1">Every inquiry is reviewed personally. No automation.</span>
+              </div>
             </div>
           </FadeInSection>
         </div>
@@ -113,8 +99,8 @@ const Contact = () => {
               <FadeInSection>
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
-                    <p className="text-muted-foreground mb-8">
+                    <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+                    <p className="text-muted-foreground mb-8 text-sm md:text-base">
                       Ready to discuss your project? Fill out the form and we'll schedule a no-pressure consultation.
                     </p>
                   </div>
@@ -125,10 +111,10 @@ const Contact = () => {
                         <Mail className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium mb-1">Email</h3>
+                        <h4 className="font-medium mb-1 text-base">Email</h4>
                         <a 
                           href="mailto:hello@scalvex.com" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm md:text-base"
                         >
                           hello@scalvex.com
                         </a>
@@ -140,8 +126,8 @@ const Contact = () => {
                         <Clock className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium mb-1">Response Time</h3>
-                        <p className="text-muted-foreground">
+                        <h4 className="font-medium mb-1 text-base">Response Time</h4>
+                        <p className="text-muted-foreground text-sm md:text-base">
                           We respond within 24–48 hours
                         </p>
                       </div>
@@ -152,8 +138,8 @@ const Contact = () => {
                         <Shield className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium mb-1">No-Pressure Consultation</h3>
-                        <p className="text-muted-foreground">
+                        <h4 className="font-medium mb-1 text-base">No-Pressure Consultation</h4>
+                        <p className="text-muted-foreground text-sm md:text-base">
                           Free audit with actionable insights — whether you work with us or not
                         </p>
                       </div>
@@ -213,57 +199,7 @@ const Contact = () => {
                             )}
                           />
 
-                          <div className="grid sm:grid-cols-2 gap-6">
-                            <FormField
-                              control={form.control}
-                              name="projectType"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>Project Type *</FormLabel>
-                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                    <FormControl>
-                                      <SelectTrigger>
-                                        <SelectValue placeholder="Select project type" />
-                                      </SelectTrigger>
-                                    </FormControl>
-                                    <SelectContent>
-                                      {projectTypes.map((type) => (
-                                        <SelectItem key={type} value={type}>
-                                          {type}
-                                        </SelectItem>
-                                      ))}
-                                    </SelectContent>
-                                  </Select>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
 
-                            <FormField
-                              control={form.control}
-                              name="budget"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>Estimated Budget *</FormLabel>
-                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                    <FormControl>
-                                      <SelectTrigger>
-                                        <SelectValue placeholder="Select budget range" />
-                                      </SelectTrigger>
-                                    </FormControl>
-                                    <SelectContent>
-                                      {budgetRanges.map((range) => (
-                                        <SelectItem key={range} value={range}>
-                                          {range}
-                                        </SelectItem>
-                                      ))}
-                                    </SelectContent>
-                                  </Select>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                          </div>
 
                           <FormField
                             control={form.control}

@@ -1,8 +1,9 @@
-import { NavLink as RouterNavLink, NavLinkProps } from "react-router-dom";
-import { forwardRef } from "react";
+import { NavLink as RouterNavLink, useNavigate } from "react-router-dom";
+import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
-interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
+interface NavLinkCompatProps {
+  to: string;
   className?: string;
   activeClassName?: string;
   pendingClassName?: string;
@@ -10,6 +11,12 @@ interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
   ({ className, activeClassName, pendingClassName, to, ...props }, ref) => {
+    const navigate = useNavigate();
+    const handleClick = (e: React.MouseEvent) => {
+      e.preventDefault();
+      navigate(to);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     return (
       <RouterNavLink
         ref={ref}
@@ -18,6 +25,7 @@ const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
           cn(className, isActive && activeClassName, isPending && pendingClassName)
         }
         {...props}
+        onClick={handleClick}
       />
     );
   },

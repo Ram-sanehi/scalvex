@@ -89,6 +89,12 @@ const Services = () => {
                 Web development with SEO built in. We create websites that not only look great 
                 but are engineered to perform in search and convert visitors into leads.
               </p>
+              <div className="mt-6 text-base text-muted-foreground">
+                <span className="block mb-1">We take on a limited number of projects to maintain quality.</span>
+                <span className="block mb-1">We don’t offer templates, rushed builds, or SEO as an afterthought.</span>
+                <span className="block mb-1">Projects are handled directly by the founder with clear milestones.</span>
+                <span className="block mb-1">Pricing reflects scope, complexity, and long-term value.</span>
+              </div>
             </div>
           </FadeInSection>
         </div>

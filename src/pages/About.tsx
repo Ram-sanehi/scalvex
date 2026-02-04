@@ -40,6 +40,12 @@ const About = () => {
                 Scalvex is a web development studio helping service businesses build fast, 
                 SEO-ready websites that generate consistent leads.
               </p>
+              <div className="mt-6 text-base text-muted-foreground">
+                <span className="block mb-1">We take on a limited number of projects to maintain quality.</span>
+                <span className="block mb-1">We don’t offer templates, rushed builds, or SEO as an afterthought.</span>
+                <span className="block mb-1">Projects are handled directly by the founder with clear milestones.</span>
+                <span className="block mb-1">Pricing reflects scope, complexity, and long-term value.</span>
+              </div>
             </div>
           </FadeInSection>
         </div>

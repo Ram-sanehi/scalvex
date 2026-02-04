@@ -13,6 +13,7 @@ const Header = () => {
     { name: 'Work', path: '/work' },
     { name: 'Process', path: '/process' },
     { name: 'About', path: '/about' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   const isActive = (path: string) => location.pathname === path;

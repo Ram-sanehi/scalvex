@@ -12,6 +12,13 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import BlogIndex from "./pages/blog/index";
+import SeoFirstLeads from "./pages/blog/seo-first-leads";
+import RedesignChecklist from "./pages/blog/redesign-checklist";
+import FixConversion from "./pages/blog/fix-conversion";
+import SeoContentStrategy from "./pages/blog/seo-content-strategy";
+import LocalSeoGuide from "./pages/blog/local-seo-guide";
+import FastSiteBenefits from "./pages/blog/fast-site-benefits";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +37,13 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="blog" element={<BlogIndex />} />
+          <Route path="blog/seo-first-leads" element={<SeoFirstLeads />} />
+          <Route path="blog/redesign-checklist" element={<RedesignChecklist />} />
+          <Route path="blog/fix-conversion" element={<FixConversion />} />
+          <Route path="blog/seo-content-strategy" element={<SeoContentStrategy />} />
+          <Route path="blog/local-seo-guide" element={<LocalSeoGuide />} />
+          <Route path="blog/fast-site-benefits" element={<FastSiteBenefits />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
