@@ -37,8 +37,8 @@ const Privacy = () => {
 
                 <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">Contact Us</h2>
                 <p>
-                  If you have any questions about this Privacy Policy, please contact us at 
-                  hello@edgeservices.in.
+                  If you have any questions about this Privacy Policy, please contact us at{' '}
+                  <a href="mailto:hello@scalvex.com" className="text-primary hover:underline">hello@scalvex.com</a>.
                 </p>
               </div>
             </div>

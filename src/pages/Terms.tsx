@@ -23,7 +23,7 @@ const Terms = () => {
 
                 <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">Services</h2>
                 <p>
-                  Edge Services provides web development and SEO services. Specific terms for each 
+                  Scalvex provides web development and SEO services. Specific terms for each 
                   project are outlined in individual project agreements or proposals.
                 </p>
 
@@ -31,19 +31,19 @@ const Terms = () => {
                 <p>
                   Upon full payment, clients receive ownership of custom work created specifically 
                   for their project. Pre-existing tools, frameworks, and templates remain the 
-                  property of Edge Services or their respective owners.
+                  property of Scalvex or their respective owners.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">Limitation of Liability</h2>
                 <p>
-                  Edge Services shall not be liable for any indirect, incidental, special, 
+                  Scalvex shall not be liable for any indirect, incidental, special, 
                   consequential, or punitive damages resulting from your use of our services.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">Contact Us</h2>
                 <p>
-                  For any questions regarding these Terms of Service, please contact us at 
-                  hello@edgeservices.in.
+                  For any questions regarding these Terms of Service, please contact us at{' '}
+                  <a href="mailto:hello@scalvex.com" className="text-primary hover:underline">hello@scalvex.com</a>.
                 </p>
               </div>
             </div>
