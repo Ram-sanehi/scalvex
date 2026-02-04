@@ -9,17 +9,17 @@ const About = () => {
     {
       icon: Target,
       title: 'Results-Focused',
-      description: 'We measure success by outcomes, not just deliverables. Every project is designed to achieve your business goals.',
+      description: 'We measure success by outcomes, not just deliverables. Every project is designed to achieve measurable business growth.',
     },
     {
       icon: Globe,
       title: 'Remote-First',
-      description: "Our distributed team model allows us to work with the best talent globally while keeping costs efficient.",
+      description: 'Our distributed model allows us to work with the best talent globally while keeping costs efficient for our clients.',
     },
     {
       icon: Users,
-      title: 'Collaborative',
-      description: "We believe the best work comes from true partnership. You're involved at every stage of the process.",
+      title: 'Founder-Led',
+      description: 'Direct access to experienced strategists. No junior handoffs or layers of account managers slowing things down.',
     },
     {
       icon: Zap,
@@ -35,43 +35,47 @@ const About = () => {
         <div className="container-custom">
           <FadeInSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="mb-6">A Remote-First Digital Team Focused on Results</h1>
+              <h1 className="mb-6">A Founder-Led Studio Focused on Results</h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Edge Services is a web development and SEO agency helping businesses build fast, 
-                scalable, and conversion-focused websites.
+                Scalvex is a web development studio helping service businesses build fast, 
+                SEO-ready websites that generate consistent leads.
               </p>
             </div>
           </FadeInSection>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Founder Story */}
       <section className="section-padding bg-card">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <FadeInSection>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="mb-6">Our Approach</h2>
+                  <h2 className="mb-6">Why Scalvex Exists</h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      We operate remotely with a network of experienced professionals, allowing us 
-                      to deliver flexible, high-quality solutions to clients across industries and regions.
+                      Scalvex was created after seeing too many websites fail due to poor SEO foundations 
+                      and performance neglect. Beautiful designs that nobody could find. Fast launches 
+                      that slowed to a crawl. Agencies that promised growth but delivered confusion.
                     </p>
                     <p>
-                      Unlike traditional agencies with bloated teams and overhead, we focus on efficiency 
-                      without compromising quality. Every project gets the attention it deserves, with 
-                      clear communication and transparent processes.
+                      Every project we take on is built with clarity, efficiency, and measurable growth 
+                      in mind. We don't just build websites — we build digital assets that work as 
+                      hard as you do.
                     </p>
                     <p>
-                      Our philosophy is simple: build websites that work. That means fast loading times, 
-                      clear messaging, intuitive user experiences, and SEO foundations that help you 
-                      get found online.
+                      As a founder-led studio, you work directly with experienced strategists who 
+                      understand both the technical and business sides of web development.
                     </p>
+                  </div>
+                  <div className="mt-8 pt-6 border-t border-border">
+                    <p className="font-semibold text-foreground">Ram Sanehi</p>
+                    <p className="text-sm text-muted-foreground">Founder & Lead Web Strategist</p>
                   </div>
                 </div>
                 <div className="aspect-square bg-muted rounded-lg flex items-center justify-center">
-                  <span className="text-muted-foreground">Team Image Placeholder</span>
+                  <span className="text-muted-foreground">Founder Image</span>
                 </div>
               </div>
             </FadeInSection>
@@ -84,7 +88,7 @@ const About = () => {
         <div className="container-custom">
           <FadeInSection>
             <div className="text-center mb-12">
-              <h2 className="mb-4">What We Value</h2>
+              <h2 className="mb-4">What We Stand For</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 The principles that guide how we work and deliver for our clients.
               </p>
@@ -112,27 +116,34 @@ const About = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <FadeInSection>
-              <h2 className="text-center mb-8">Why Work With Us?</h2>
+              <h2 className="text-center mb-8">Why Work With Scalvex</h2>
               <div className="space-y-6 text-muted-foreground">
                 <div className="flex gap-4">
                   <span className="text-2xl font-bold text-primary">01</span>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">No Hidden Costs</h3>
-                    <p>Transparent pricing with clear project scopes. You know exactly what you're paying for.</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">SEO From Day One</h3>
+                    <p>Your website is built with search visibility in mind from the first line of code — not bolted on as an afterthought.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <span className="text-2xl font-bold text-primary">02</span>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">Direct Communication</h3>
-                    <p>Work directly with the people building your project. No layers of account managers.</p>
+                    <p>Work directly with the people building your project. No layers of account managers or junior handoffs.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <span className="text-2xl font-bold text-primary">03</span>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">Quality Without Markup</h3>
-                    <p>Our remote model means lower costs passed on to you, not bigger agency profits.</p>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">Transparent Pricing</h3>
+                    <p>Clear project scopes and honest estimates. You know exactly what you're paying for and what you'll receive.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <span className="text-2xl font-bold text-primary">04</span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-1">Built for Growth</h3>
+                    <p>Scalable architecture that grows with your business. No technical debt holding you back as you scale.</p>
                   </div>
                 </div>
               </div>
@@ -146,9 +157,9 @@ const About = () => {
         <div className="container-custom">
           <FadeInSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-4 text-primary-foreground">Let's Work Together</h2>
+              <h2 className="mb-4 text-primary-foreground">Ready to Work Together?</h2>
               <p className="text-lg text-primary-foreground/80 mb-8">
-                Ready to start a project or just want to learn more? We'd love to hear from you.
+                Get a free consultation — no pressure, just actionable insights for your business.
               </p>
               <Button size="lg" variant="secondary" asChild>
                 <Link to="/contact">Get in Touch</Link>

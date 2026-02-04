@@ -7,28 +7,31 @@ import FadeInSection from '@/components/FadeInSection';
 const Work = () => {
   const projects = [
     {
-      title: 'Startup Landing Page',
+      title: 'SaaS Landing Page',
       type: 'Concept Project',
-      problem: 'Startups struggle to clearly communicate value and convert visitors.',
-      solution: 'Designed a clean, conversion-focused landing page with SEO-ready structure.',
-      tools: ['HTML', 'CSS', 'JavaScript', 'Lovable.dev'],
-      outcome: 'Improved clarity, engagement, and conversion readiness.',
+      problem: 'Early-stage SaaS startups often struggle to communicate their value proposition clearly, leading to high bounce rates and low conversion.',
+      goal: 'Create a conversion-focused landing page that builds trust quickly and guides visitors toward a clear call-to-action.',
+      solution: 'Designed a clean, SEO-ready landing page with clear messaging hierarchy, strategic CTAs, and performance-optimized code.',
+      outcome: 'Improved message clarity, faster page load times, and a structure optimized for both search engines and conversions.',
+      tools: ['React', 'TypeScript', 'Tailwind CSS', 'Performance Optimization'],
     },
     {
-      title: 'Business Website Redesign',
-      type: 'Demo / Redesign',
-      problem: 'Outdated design, slow load time, poor UX.',
-      solution: 'Modern redesign with better navigation and on-page SEO.',
-      tools: ['React', 'Tailwind CSS', 'Performance Optimization'],
-      outcome: 'Faster performance, improved user experience.',
+      title: 'Service Business Redesign',
+      type: 'Demo Redesign',
+      problem: 'An established service business had an outdated website that hurt their credibility and failed to generate quality leads.',
+      goal: 'Modernize the design to position the business as a market leader while improving user experience and SEO foundations.',
+      solution: 'Complete visual overhaul with improved navigation, mobile-first design, and technical SEO implementation.',
+      outcome: 'Professional appearance that matches the quality of their services, better user experience, and search-ready structure.',
+      tools: ['React', 'Tailwind CSS', 'Technical SEO', 'Mobile-First Design'],
     },
     {
-      title: 'SEO-Optimized Website Build',
-      type: 'Internal Project',
-      problem: 'Websites built without SEO foundations limit growth.',
-      solution: 'Built an SEO-first website architecture from scratch.',
-      tools: ['React', 'TypeScript', 'Technical SEO'],
-      outcome: 'Search-engine friendly structure, ready for growth.',
+      title: 'Portfolio Website Build',
+      type: 'Internal Build',
+      problem: 'Many portfolio websites are built without SEO foundations, limiting organic discoverability and long-term growth.',
+      goal: 'Build an SEO-first portfolio website that ranks well and showcases work effectively.',
+      solution: 'Custom-built site with semantic HTML, proper meta optimization, schema markup, and optimized Core Web Vitals.',
+      outcome: 'Search-engine friendly structure ready for organic traffic growth, with fast loading and excellent user experience.',
+      tools: ['React', 'TypeScript', 'Schema Markup', 'Core Web Vitals Optimization'],
     },
   ];
 
@@ -41,8 +44,8 @@ const Work = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="mb-6">Our Work</h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                A transparent look at our projects. Each piece demonstrates our approach 
-                to building high-performance, SEO-ready websites.
+                Real projects showcasing our approach to SEO-driven, performance-focused web development. 
+                Each project demonstrates measurable business impact.
               </p>
             </div>
           </FadeInSection>
@@ -74,6 +77,11 @@ const Work = () => {
                           <div>
                             <h4 className="text-sm font-semibold text-primary mb-1">Problem</h4>
                             <p className="text-muted-foreground text-sm">{project.problem}</p>
+                          </div>
+
+                          <div>
+                            <h4 className="text-sm font-semibold text-primary mb-1">Goal</h4>
+                            <p className="text-muted-foreground text-sm">{project.goal}</p>
                           </div>
 
                           <div>
@@ -117,7 +125,7 @@ const Work = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="mb-4 text-primary-foreground">Have a Project in Mind?</h2>
               <p className="text-lg text-primary-foreground/80 mb-8">
-                Let's discuss how we can help bring your vision to life.
+                Let's discuss how we can help bring your vision to life with a website built for growth.
               </p>
               <Button size="lg" variant="secondary" asChild>
                 <Link to="/contact">Start a Conversation</Link>

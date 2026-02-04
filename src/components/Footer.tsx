@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +10,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4 text-primary-foreground">Edge Services</h3>
+            <h3 className="text-xl font-bold mb-4 text-primary-foreground">Scalvex</h3>
             <p className="text-primary-foreground/80 max-w-md">
-              We build high-performance websites that rank and convert. Web development with SEO built in.
+              SEO-driven websites for service businesses that want consistent leads. 
+              Built with performance and visibility from day one.
             </p>
           </div>
 
@@ -71,7 +72,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/80 text-sm">
-              © {currentYear} Edge Services. All rights reserved.
+              © {currentYear} Scalvex. All rights reserved.
             </p>
             
             {/* Social Links */}
@@ -93,15 +94,6 @@ const Footer = () => {
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
               </a>
             </div>
           </div>

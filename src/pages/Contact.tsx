@@ -6,10 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import Layout from '@/components/Layout';
 import FadeInSection from '@/components/FadeInSection';
-import { Mail, Clock, Send } from 'lucide-react';
+import { Mail, Clock, Send, Shield } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -17,6 +18,8 @@ const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
   email: z.string().trim().email('Please enter a valid email').max(255, 'Email must be less than 255 characters'),
   company: z.string().trim().max(100, 'Company name must be less than 100 characters').optional(),
+  projectType: z.string().min(1, 'Please select a project type'),
+  budget: z.string().min(1, 'Please select an estimated budget'),
   message: z.string().trim().min(10, 'Message must be at least 10 characters').max(2000, 'Message must be less than 2000 characters'),
 });
 
@@ -32,6 +35,8 @@ const Contact = () => {
       name: '',
       email: '',
       company: '',
+      projectType: '',
+      budget: '',
       message: '',
     },
   });
@@ -64,6 +69,25 @@ const Contact = () => {
     }
   };
 
+  const projectTypes = [
+    'New Business Website',
+    'Website Redesign',
+    'Landing Page',
+    'Startup / MVP Build',
+    'SEO Services',
+    'Performance Optimization',
+    'Other',
+  ];
+
+  const budgetRanges = [
+    'Under $2,500',
+    '$2,500 - $5,000',
+    '$5,000 - $10,000',
+    '$10,000 - $25,000',
+    '$25,000+',
+    'Not sure yet',
+  ];
+
   return (
     <Layout>
       {/* Hero */}
@@ -71,9 +95,9 @@ const Contact = () => {
         <div className="container-custom">
           <FadeInSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="mb-6">Get in Touch</h1>
+              <h1 className="mb-6">Let's Talk About Your Project</h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Tell us about your project and we'll get back to you within 24–48 hours.
+                Tell us about your goals and we'll get back to you within 24–48 hours with actionable insights.
               </p>
             </div>
           </FadeInSection>
@@ -91,7 +115,7 @@ const Contact = () => {
                   <div>
                     <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
                     <p className="text-muted-foreground mb-8">
-                      Ready to discuss your project? Fill out the form or reach out directly.
+                      Ready to discuss your project? Fill out the form and we'll schedule a no-pressure consultation.
                     </p>
                   </div>
 
@@ -103,10 +127,10 @@ const Contact = () => {
                       <div>
                         <h3 className="font-medium mb-1">Email</h3>
                         <a 
-                          href="mailto:hello@edgeservices.in" 
+                          href="mailto:hello@scalvex.com" 
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
-                          hello@edgeservices.in
+                          hello@scalvex.com
                         </a>
                       </div>
                     </div>
@@ -118,16 +142,22 @@ const Contact = () => {
                       <div>
                         <h3 className="font-medium mb-1">Response Time</h3>
                         <p className="text-muted-foreground">
-                          We typically respond within 24–48 hours
+                          We respond within 24–48 hours
                         </p>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="pt-6 border-t border-border">
-                    <p className="text-sm text-muted-foreground">
-                      * Calendar booking for calls will be available soon.
-                    </p>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Shield className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium mb-1">No-Pressure Consultation</h3>
+                        <p className="text-muted-foreground">
+                          Free audit with actionable insights — whether you work with us or not
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </FadeInSection>
@@ -183,15 +213,67 @@ const Contact = () => {
                             )}
                           />
 
+                          <div className="grid sm:grid-cols-2 gap-6">
+                            <FormField
+                              control={form.control}
+                              name="projectType"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Project Type *</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder="Select project type" />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      {projectTypes.map((type) => (
+                                        <SelectItem key={type} value={type}>
+                                          {type}
+                                        </SelectItem>
+                                      ))}
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+
+                            <FormField
+                              control={form.control}
+                              name="budget"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Estimated Budget *</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder="Select budget range" />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      {budgetRanges.map((range) => (
+                                        <SelectItem key={range} value={range}>
+                                          {range}
+                                        </SelectItem>
+                                      ))}
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+
                           <FormField
                             control={form.control}
                             name="message"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>Message *</FormLabel>
+                                <FormLabel>Tell us about your project *</FormLabel>
                                 <FormControl>
                                   <Textarea
-                                    placeholder="Tell us about your project..."
+                                    placeholder="What are you looking to achieve? What challenges are you facing?"
                                     className="min-h-[150px]"
                                     {...field}
                                   />
