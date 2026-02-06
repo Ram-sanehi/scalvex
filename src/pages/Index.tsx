@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from '@/components/ui/carousel';
+import ProjectStack from '@/components/ProjectStack';
 import Layout from '@/components/Layout';
 import FadeInSection from '@/components/FadeInSection';
 import { 
@@ -29,37 +30,38 @@ import {
 const Index = () => {
     // Refined, outcome-focused, real testimonials (5–8)
     const testimonials = [
-      {
-        quote: 'Scalvex delivered a clean, fast website with strong SEO foundations. Communication was clear and execution was solid.',
-        name: 'Alex M.',
-        type: 'SaaS Founder',
-      },
-      {
-        quote: 'Our new site loads instantly and ranks for our target keywords. The process was smooth and results-driven.',
-        name: 'Priya S.',
-        type: 'Service Business Owner',
-      },
-      {
-        quote: 'The team at Scalvex rebuilt our site for speed and structure. We saw a measurable increase in qualified leads.',
-        name: 'Jordan T.',
-        type: 'Agency Partner',
-      },
-      {
-        quote: 'Clear milestones, direct communication, and a site that performs. Highly reliable and professional.',
-        name: 'Lisa R.',
-        type: 'Consulting Firm',
-      },
-      {
-        quote: 'Scalvex made our redesign seamless. We noticed better engagement and faster load times right away.',
-        name: 'David K.',
-        type: 'Health Studio Owner',
-      },
-      {
-        quote: 'SEO improvements were visible within weeks. The site is easy to manage and built for growth.',
-        name: 'Sophie L.',
-        type: 'Home Services Founder',
-      },
-    ];
+  {
+    quote: 'Working with Scalvex transformed our online presence. The website is fast, intuitive, and optimized for search engines — we started seeing leads immediately.',
+    name: 'Rohit Sharma',
+    type: 'E-commerce Entrepreneur',
+  },
+  {
+    quote: 'The Scalvex team is exceptional. Their process is clear, milestones are met, and the communication is direct. Our business website now performs beyond expectations.',
+    name: 'Ananya Mehta',
+    type: 'Digital Marketing Agency Owner',
+  },
+  {
+    quote: 'Our service business now has a website that not only looks professional but converts visitors into clients efficiently. Scalvex delivered every promise.',
+    name: 'Vikram Singh',
+    type: 'Fitness Studio Founder',
+  },
+  {
+    quote: 'Fast, efficient, and SEO-ready. Scalvex rebuilt our site with precision, and we noticed higher traffic and better engagement within weeks.',
+    name: 'Sneha Reddy',
+    type: 'Consulting Firm Owner',
+  },
+  {
+    quote: 'Direct communication with the founder ensured our project stayed on track. Scalvex delivered a website that is scalable, fast, and conversion-focused.',
+    name: 'Karan Joshi',
+    type: 'Education Platform Founder',
+  },
+  {
+    quote: 'From design to launch, Scalvex handled everything seamlessly. The result is a website that is visually stunning, technically solid, and leads-driven.',
+    name: 'Priyanka Iyer',
+    type: 'Health & Wellness Studio Owner',
+  },
+];
+
   const trustHighlights = [
     { icon: Search, text: 'SEO-first development approach' },
     { icon: Zap, text: 'Performance-optimized builds' },
@@ -133,67 +135,335 @@ const processSteps = [
 
 
   const featuredProjects = [
-    {
-      title: 'Law Firm Website',
-      type: 'Client Project',
-      context: 'For a regional law firm needing credibility and local search visibility',
-      problem: 'Low online trust and poor search rankings for legal services',
-      goal: 'Establish authority and drive qualified leads through organic search',
-      strategy: 'Technical SEO, fast-loading pages, clear service navigation, schema markup',
-      execution: 'Custom design, semantic HTML, performance optimization, on-page SEO',
-      outcome: 'Top 3 local rankings, increased consultation requests, improved trust signals',
-      tools: ['React', 'Tailwind CSS', 'Next.js', 'Schema Markup', 'SEO Audits'],
-      liveUrl: 'https://clientlawfirm.com'
-    },
-    {
-      title: 'Home Services Business',
-      type: 'Client Project',
-      context: 'For a growing home services company expanding into new markets',
-      problem: 'Outdated site, slow load times, and low conversion rates',
-      goal: 'Modernize the site and improve lead generation',
-      strategy: 'Mobile-first UX, conversion-focused CTAs, technical SEO, analytics',
-      execution: 'Redesign, performance tuning, SEO structure, analytics integration',
-      outcome: 'Faster site, higher conversion rate, better search visibility',
-      tools: ['React', 'Tailwind CSS', 'Google Analytics', 'SEO Tools'],
-      liveUrl: 'https://clienthomeservices.com'
-    },
-    {
-      title: 'B2B SaaS Platform',
-      type: 'Client Project',
-      context: 'For a SaaS startup targeting enterprise clients',
-      problem: 'Lack of clarity and poor organic reach for product features',
-      goal: 'Drive demo requests and improve organic traffic',
-      strategy: 'Content optimization, technical SEO, fast UI, conversion tracking',
-      execution: 'Custom landing pages, schema, performance audits, SEO copywriting',
-      outcome: 'Increased demo signups, improved keyword rankings, faster onboarding',
-      tools: ['React', 'TypeScript', 'Tailwind CSS', 'SEO Copywriting'],
-      liveUrl: 'https://clientsaasplatform.com'
-    },
-    {
-      title: 'Health & Wellness Studio',
-      type: 'Client Project',
-      context: 'For a boutique wellness studio needing local visibility and bookings',
-      problem: 'Low online bookings and poor local search results',
-      goal: 'Increase bookings and improve local SEO',
-      strategy: 'Local SEO, fast mobile experience, clear service pages',
-      execution: 'Mobile-first design, local schema, booking integration',
-      outcome: 'Higher booking rates, top 5 local search rankings',
-      tools: ['React', 'Tailwind CSS', 'Local SEO', 'Booking API'],
-      liveUrl: 'https://clientwellnessstudio.com'
-    },
-    {
-      title: 'Consulting Agency',
-      type: 'Client Project',
-      context: 'For a business consulting firm targeting growth-stage companies',
-      problem: 'Generic site, low engagement, and poor conversion tracking',
-      goal: 'Position as a premium provider and capture qualified leads',
-      strategy: 'Conversion-focused UX, technical SEO, analytics, premium design',
-      execution: 'Custom layouts, SEO audits, analytics setup, performance optimization',
-      outcome: 'Improved engagement, more qualified leads, premium brand perception',
-      tools: ['React', 'Tailwind CSS', 'SEO Audits', 'Google Analytics'],
-      liveUrl: 'https://clientconsultingagency.com'
-    },
-  ];
+  {
+    featured: true,
+    title: 'Alpha Investment Management',
+    image: '/aim.png',
+    link: '/alphainvestmentcasestudy',
+    type: 'Case Study',
+    caseStudy: `# Case Study: Alpha Investment Management
+
+## Project Overview
+**Alpha Investment Management** is a digital platform built to help investment firms present their services, portfolio strategies, and performance insights with clarity and trust. The goal was to translate complex financial data into a professional, accessible, and conversion-focused digital experience.
+
+---
+
+## Challenges
+- **Trust & Credibility**
+  Financial services demand a strong sense of authority and reliability, which was missing in the earlier digital presence.
+
+- **Complex Data Communication**
+  Financial metrics and strategies were difficult for non-technical users to understand.
+
+- **User Experience Issues**
+  Navigation and content structure lacked clarity and flow.
+
+- **Scalability & Security**
+  The platform needed to support future dashboards while maintaining performance and security.
+
+---
+
+## Solution
+A modern, high-performance investment platform featuring:
+- A clean, professional UI to establish trust
+- Structured content for simplified financial storytelling
+- Secure and scalable architecture
+- Data visualization for clarity
+
+---
+
+## Approach
+1. Requirement analysis and audience understanding  
+2. UX-focused information architecture  
+3. Premium design system and layout consistency  
+4. Modular, scalable development  
+5. Performance and security optimization  
+
+---
+
+## Implementation
+- Responsive web application for all devices
+- Dynamic sections for services and performance insights
+- Financial charts for data clarity
+- SEO and accessibility best practices
+- CI/CD-driven deployment workflow
+
+---
+
+## Outcome & Impact
+- Improved brand trust and authority
+- Increased user engagement
+- Higher lead conversion rates
+- Platform ready for future expansion
+
+---
+
+## Technology Stack
+Frontend: React, Tailwind CSS, Chart.js  
+Backend: Node.js, Express.js  
+Database: MongoDB / PostgreSQL  
+DevOps & Security: Docker, Nginx, JWT, CI/CD
+`,
+    context:
+      'Digital platform for investment firms to present services, strategies, and performance insights.',
+    problem:
+      'Lacked authority, complex data presentation, poor UX, and scalability concerns.',
+    goal:
+      'Build a high-trust, scalable, and performance-optimized investment platform.',
+    strategy:
+      'Professional UI, structured content, secure architecture, data visualization, SEO.',
+    execution:
+      'Responsive web app, modular sections, charts, SEO optimization, CI/CD pipeline.',
+    outcome:
+      'Increased trust, engagement, conversion, and long-term scalability.',
+    tools: [
+      'React',
+      'Tailwind CSS',
+      'Chart.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'PostgreSQL',
+      'Docker',
+      'JWT',
+      'CI/CD'
+    ]
+  },
+  {
+    featured: true,
+    title: 'Nilkamal Interiors & Furnitures',
+    image: '/nilkamal.png',
+    link: '/nilkamalinteriorscasestudy',
+    type: 'Client Project',
+    caseStudy: `# Case Study: Nilkamal Interiors & Furnitures
+
+## Project Overview
+Nilkamal Interiors & Furnitures required a strong digital presence to showcase interior projects and custom furniture work while appealing to premium residential and commercial clients.
+
+---
+
+## Challenges
+- Weak visual presentation of completed projects
+- Outdated layout affecting brand perception
+- Low inquiry conversion from website visitors
+
+---
+
+## Solution
+A visual-first website designed to highlight craftsmanship, space aesthetics, and completed interior projects.
+
+---
+
+## Implementation
+- Modern UI with image-driven layouts
+- Responsive project galleries
+- Optimized images for fast performance
+- Clear call-to-action placement
+
+---
+
+## Outcome
+- Improved brand perception
+- Higher engagement on project pages
+- Increased qualified client inquiries
+`,
+    context:
+      'Digital presence for an interior design and furniture brand showcasing premium projects.',
+    problem:
+      'Outdated design, poor visual storytelling, and low lead conversion.',
+    goal:
+      'Showcase interior work professionally and improve inquiries.',
+    strategy:
+      'Visual-first UX, clean layouts, strong imagery.',
+    execution:
+      'UI redesign, responsive galleries, performance optimization.',
+    outcome:
+      'Stronger brand image and improved client engagement.',
+    tools: [
+      'React',
+      'Tailwind CSS',
+      'Responsive Design',
+      'Image Optimization'
+    ]
+  },
+  {
+    featured: true,
+    title: 'Archly',
+    image: '/archly.png',
+    link: '/archlycasestudy',
+    type: 'Case Study',
+    caseStudy: `# Case Study: Archly
+
+## Project Overview
+Archly is a portfolio platform designed for architects to professionally present their work, projects, and design philosophy.
+
+---
+
+## Challenges
+- Scattered portfolio content
+- No structured project presentation
+- Limited online visibility
+
+---
+
+## Solution
+A clean, portfolio-focused platform emphasizing visuals and project storytelling.
+
+---
+
+## Implementation
+- Project-based portfolio structure
+- Case-study style layouts
+- Responsive, minimal UI
+- SEO-ready architecture
+
+---
+
+## Outcome
+- Strong personal brand presence
+- Improved discoverability
+- Better client outreach
+`,
+    context:
+      'Portfolio platform for architects to showcase professional work.',
+    problem:
+      'Unstructured portfolio and weak online presence.',
+    goal:
+      'Create a centralized professional portfolio.',
+    strategy:
+      'Portfolio-first UX and minimal design.',
+    execution:
+      'Galleries, case-study layouts, SEO optimization.',
+    outcome:
+      'Improved visibility and client engagement.',
+    tools: [
+      'React',
+      'Tailwind CSS',
+      'Portfolio Design',
+      'SEO Optimization'
+    ]
+  },
+  {
+    featured: true,
+    title: 'FinanceHub',
+    image: '/financehub.png',
+    link: '/financehubcasestudy',
+    type: 'Case Study',
+    caseStudy: `# Case Study: FinanceHub
+
+## Project Overview
+**FinanceHub** is an AI-driven finance and loan management system designed to help users track loans, manage finances, and gain intelligent insights for better financial decisions.
+
+---
+
+## Challenges
+- Manual tracking of loans and finances
+- Lack of actionable financial insights
+- Complex user workflows
+
+---
+
+## Solution
+An intelligent dashboard-driven platform combining automation and AI-powered insights.
+
+---
+
+## Implementation
+- Role-based dashboards
+- Loan and finance tracking modules
+- AI-driven insights and recommendations
+- Secure authentication system
+
+---
+
+## Outcome
+- Reduced manual effort
+- Improved financial clarity
+- Higher user adoption
+`,
+    context:
+      'AI-driven finance and loan management platform.',
+    problem:
+      'Manual workflows and lack of financial visibility.',
+    goal:
+      'Simplify finance and loan management using AI.',
+    strategy:
+      'Automation, AI insights, secure system design.',
+    execution:
+      'Dashboards, loan modules, authentication.',
+    outcome:
+      'Smarter financial decisions and better usability.',
+    tools: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'AI Integration'
+    ]
+  },
+  {
+    featured: true,
+    title: 'AgriFresh',
+    image: '/agrifresh.png',
+    link: '/agrifreshcasestudy',
+    type: 'Client Project',
+    caseStudy: `# Case Study: AgriFresh
+
+## Project Overview
+AgriFresh is an e-commerce platform built to enable online sales of fresh agricultural products with secure payments and user account management.
+
+---
+
+## Challenges
+- No online sales channel
+- Limited customer reach
+- Manual order handling
+
+---
+
+## Solution
+A scalable e-commerce platform with seamless checkout and account creation.
+
+---
+
+## Implementation
+- Product catalog and categories
+- User authentication system
+- Cart and checkout flow
+- Payment gateway integration
+
+---
+
+## Outcome
+- Expanded digital reach
+- Streamlined order management
+- Improved customer experience
+`,
+    context:
+      'E-commerce platform for fresh agricultural products.',
+    problem:
+      'Lack of online sales and inefficient order management.',
+    goal:
+      'Enable digital sales with secure payments.',
+    strategy:
+      'Simple UX, mobile-first design, scalable backend.',
+    execution:
+      'E-commerce features, payments, authentication.',
+    outcome:
+      'Increased reach and operational efficiency.',
+    tools: [
+      'React',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'Payment Gateway'
+    ]
+  },
+  
+];
+
 
   return (
 
@@ -243,7 +513,7 @@ const processSteps = [
         </div>
       </section>
 
-      {/* Selected Client Work */}
+      {/* Premium Stacked Projects Section */}
       <section className="section-padding bg-card">
         <div className="container-custom">
           <FadeInSection>
@@ -254,65 +524,7 @@ const processSteps = [
               </p>
             </div>
           </FadeInSection>
-
-          <div className="space-y-10">
-            {featuredProjects.slice(0, 2).map((project, index) => (
-              <FadeInSection key={index} delay={index * 100}>
-                <Card className="overflow-hidden group">
-                  <CardContent className="p-0">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="grid lg:grid-cols-2 no-underline hover:bg-muted/40 transition-colors duration-200 cursor-pointer"
-                      aria-label={`Open live preview of ${project.title}`}
-                    >
-                      {/* Image Placeholder */}
-                      <div className="aspect-video lg:aspect-auto bg-muted flex items-center justify-center min-h-[220px] group-hover:bg-muted/60 transition-colors duration-200">
-                        <span className="text-muted-foreground">Project Preview</span>
-                      </div>
-
-                      {/* Content */}
-                      <div className="p-8 flex flex-col gap-4">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="inline-block text-xs font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
-                            {project.type}
-                          </span>
-                          <span className="text-sm text-accent underline ml-auto">Live Preview ↗</span>
-                        </div>
-                        <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                        <div className="mb-2">
-                          <div className="text-sm font-semibold text-primary mb-1">Outcome</div>
-                          <div className="text-muted-foreground text-base mb-1">{project.outcome}</div>
-                        </div>
-                        <div className="mb-2">
-                          <div className="text-sm font-semibold text-primary mb-1">Approach</div>
-                          <ul className="text-muted-foreground text-sm list-disc list-inside space-y-1">
-                            <li><span className="font-medium">Context:</span> {project.context}</li>
-                            <li><span className="font-medium">Problem:</span> {project.problem}</li>
-                            <li><span className="font-medium">Goal:</span> {project.goal}</li>
-                            <li><span className="font-medium">Strategy:</span> {project.strategy}</li>
-                            <li><span className="font-medium">Execution:</span> {project.execution}</li>
-                          </ul>
-                        </div>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {project.tools.map((tool, toolIndex) => (
-                            <span
-                              key={toolIndex}
-                              className="text-xs font-medium bg-secondary text-secondary-foreground px-2 py-1 rounded opacity-80"
-                            >
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </a>
-                  </CardContent>
-                </Card>
-              </FadeInSection>
-            ))}
-          </div>
-
+          <ProjectStack projects={featuredProjects.slice(0, 3)} />
           <FadeInSection delay={300}>
             <div className="text-center mt-10">
               <Button size="lg" variant="outline" asChild>
@@ -338,7 +550,7 @@ const processSteps = [
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyChooseUs.map((item, index) => (
               <FadeInSection key={index} delay={index * 80}>
-                <Card className="h-full">
+                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
                   <CardContent className="p-6">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <item.icon className="h-5 w-5 text-primary" />
@@ -379,8 +591,8 @@ const processSteps = [
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-6 md:-left-10 top-1/2" />
-              <CarouselNext className="-right-6 md:-right-10 top-1/2" />
+              <CarouselPrevious className="-left-6 md:-left-10 top-1/2 opacity-40" style={{ width: 28, height: 28 }} />
+              <CarouselNext className="-right-6 md:-right-10 top-1/2 opacity-40" style={{ width: 28, height: 28 }} />
             </Carousel>
             <div className="flex justify-center mt-4 gap-2">
               {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, i) => (
@@ -413,7 +625,7 @@ const processSteps = [
 
           <div className="grid md:grid-cols-2 gap-8">
             <FadeInSection delay={100}>
-              <Card className="h-full">
+              <Card className="h-full transition-shadow duration-200 hover:shadow-md">
                 <CardContent className="p-8">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                     <Code className="h-6 w-6 text-primary" />
@@ -435,7 +647,7 @@ const processSteps = [
             </FadeInSection>
 
             <FadeInSection delay={200}>
-              <Card className="h-full">
+              <Card className="h-full transition-shadow duration-200 hover:shadow-md">
                 <CardContent className="p-8">
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
                     <BarChart3 className="h-6 w-6 text-accent" />
@@ -516,7 +728,7 @@ const processSteps = [
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {blogPosts.slice(0, 3).map((post, idx) => (
               <FadeInSection key={post.slug} delay={100 * (idx + 1)}>
-                <Card className="h-full">
+                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
                   <CardContent className="p-6 flex flex-col justify-between h-full">
                     <div>
                       <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
@@ -553,6 +765,7 @@ const processSteps = [
               <Button 
                 size="lg" 
                 variant="secondary"
+                className="transition-shadow duration-200 hover:shadow-md"
                 asChild
               >
                 <Link to="/contact">Contact Us</Link>

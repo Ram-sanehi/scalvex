@@ -76,12 +76,17 @@ const About = () => {
                     </p>
                   </div>
                   <div className="mt-8 pt-6 border-t border-border">
-                    <p className="font-semibold text-foreground">Ram Sanehi</p>
+                    <p className="font-semibold text-foreground">Ram Vishwakarma</p>
                     <p className="text-sm text-muted-foreground">Founder & Lead Web Strategist</p>
                   </div>
                 </div>
-                <div className="aspect-square bg-muted rounded-lg flex items-center justify-center">
-                  <span className="text-muted-foreground">Founder Image</span>
+                <div className="bg-card border border-border rounded-xl overflow-hidden flex items-center justify-center transition-shadow duration-200 hover:shadow-md" style={{ aspectRatio: '3/4', maxWidth: 320, margin: '0 auto' }}>
+                  <img
+                    src="/founder.png"
+                    alt="Ram Sanehi, Founder"
+                    className="w-full h-full object-cover"
+                    style={{ display: 'block' }}
+                  />
                 </div>
               </div>
             </FadeInSection>

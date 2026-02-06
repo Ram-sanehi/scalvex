@@ -11,7 +11,7 @@ const BlogIndex = () => (
       </p>
       <div className="grid md:grid-cols-3 gap-8 mb-8">
         {blogPosts.map((post) => (
-          <div key={post.slug} className="bg-card border border-border rounded-lg p-6 flex flex-col justify-between h-full">
+          <div key={post.slug} className="bg-card border border-border rounded-lg p-6 flex flex-col justify-between h-full transition-shadow duration-200 hover:shadow-md">
             <div>
               <h2 className="text-xl font-semibold mb-2 leading-tight">{post.title}</h2>
               <p className="text-muted-foreground text-base mb-3 leading-relaxed">{post.description}</p>

@@ -76,7 +76,7 @@ const Contact = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="mb-4 text-2xl font-semibold">Let's Talk About Your Project</h2>
               <p className="text-base md:text-lg text-muted-foreground">
-                Tell us about your goals and we'll get back to you within 24–48 hours with actionable insights.
+                Tell us about your goals and we'll get back to you within 24 hours with actionable insights.
               </p>
               <div className="mt-6 text-sm text-muted-foreground">
                 <span className="block mb-1">We take on a limited number of projects to maintain quality.</span>
@@ -116,7 +116,7 @@ const Contact = () => {
                           href="mailto:hello@scalvex.com" 
                           className="text-muted-foreground hover:text-primary transition-colors text-sm md:text-base"
                         >
-                          hello@scalvex.com
+                          scalvex1@gmail.com
                         </a>
                       </div>
                     </div>
@@ -128,7 +128,7 @@ const Contact = () => {
                       <div>
                         <h4 className="font-medium mb-1 text-base">Response Time</h4>
                         <p className="text-muted-foreground text-sm md:text-base">
-                          We respond within 24–48 hours
+                          We respond within 24 hours
                         </p>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ const Contact = () => {
               {/* Contact Form */}
               <FadeInSection delay={100}>
                 <div className="lg:col-span-2">
-                  <Card>
+                  <Card className="transition-shadow duration-200 hover:shadow-md">
                     <CardContent className="p-8">
                       <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

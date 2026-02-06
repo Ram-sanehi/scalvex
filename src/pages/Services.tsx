@@ -18,6 +18,12 @@ import {
 
 const Services = () => {
   const webDevServices = [
+        {
+          icon: LayoutIcon,
+          title: 'Conversion-Focused UX & UI',
+          desc: 'Strategic layouts, clear user flows, and design decisions backed by conversion best practices.',
+          benefit: 'Visitors take action more easily — more inquiries, signups, and revenue without increasing traffic.'
+        },
     { 
       icon: Globe, 
       title: 'Business Websites', 
@@ -118,7 +124,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {webDevServices.map((service, index) => (
               <FadeInSection key={index} delay={index * 80}>
-                <Card className="h-full">
+                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
                   <CardContent className="p-6">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                       <service.icon className="h-5 w-5 text-primary" />
@@ -157,7 +163,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {seoServices.map((service, index) => (
               <FadeInSection key={index} delay={index * 80}>
-                <Card className="h-full">
+                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
                   <CardContent className="p-6">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
                       <service.icon className="h-5 w-5 text-accent" />

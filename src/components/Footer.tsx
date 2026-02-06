@@ -3,7 +3,7 @@ import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 import Medium from '@/components/ui/medium';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = 2024; // Updated year
 
   return (
     <footer className="bg-primary text-primary-foreground text-sm">
@@ -12,9 +12,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-bold mb-2 text-primary-foreground">Scalvex</h3>
-            <p className="text-primary-foreground/80 max-w-md text-sm">
+            <p className="text-primary-foreground/80 max-w-md text-sm mb-2">
               SEO-driven websites for service businesses that want consistent leads. 
               Built with performance and visibility from day one.
+            </p>
+            <p className="text-primary-foreground/80 text-sm">
+              Email: <a href="mailto:scalvex1@gmail.com" className="underline hover:text-accent">scalvex1@gmail.com</a>
             </p>
           </div>
 
@@ -72,12 +75,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-2 pt-2 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-1">
-            <p className="text-primary-foreground/80 text-xs">
+        <div className="mt-4 pt-4 border-t border-primary-foreground/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+            <p className="text-primary-foreground/80 text-xs text-center md:text-left">
               © {currentYear} Scalvex. All rights reserved.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex items-center space-x-3">
               <a

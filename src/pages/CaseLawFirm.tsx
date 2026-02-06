@@ -1,10 +1,11 @@
 import Layout from '../components/Layout';
-import { Button } from '@/components/ui/button';
+import { BackArrow } from '@/components/BackArrow';
 import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 // Example data for a real, high-ticket client project
 const caseStudy = {
+  // --- Law Firm Website Case Study ---
   name: 'Law Firm Website',
   industry: 'Legal Services',
   outcomeHeadline: '↑ 3x qualified leads, top 3 local search ranking, 1.2s load time',
@@ -13,43 +14,55 @@ const caseStudy = {
     tech: 'React, Next.js, Tailwind CSS, Schema Markup',
     timeline: '8 weeks',
   },
+  // --- Client Context ---
   clientContext: 'Regional law firm serving SMBs and individuals in a competitive metro market. Needed to establish trust and drive inbound consultations.',
+  // --- Problem ---
   problem: 'Low online trust, poor search visibility, and a dated site were limiting new client acquisition and hurting credibility.',
+  // --- Goals ---
   goals: [
     'Triple qualified consultation requests',
     'Achieve top 3 ranking for target local keywords',
     'Reduce homepage load time below 1.5s',
     'Increase tracked conversion rate by 50%',
   ],
+  // --- Strategy ---
   strategy: 'Prioritized technical SEO, clear service navigation, and conversion-focused UX. Built for speed, mobile, and search from day one. Messaging and structure engineered to build trust instantly.',
+  // --- Execution ---
   execution: 'Custom React/Next.js build with semantic HTML, schema, and performance optimization. Direct founder-led communication, clear milestones, and no agency bloat.',
+  // --- Results ---
   results: [
     '+3x qualified leads (tracked form submissions)',
     'Top 3 Google ranking for 5+ local keywords',
     '1.2s homepage load time (Lighthouse)',
     '+62% conversion rate (pre/post launch)',
     '↑ Engagement: +40% avg. session duration',
+    // Add more result items as needed
   ],
+  // --- Visuals ---
   visuals: [
     { src: '/public/case-law-desktop.png', alt: 'Law Firm Website Desktop', type: 'desktop' },
     { src: '/public/case-law-mobile.png', alt: 'Law Firm Website Mobile', type: 'mobile' },
+    // Add more visuals as needed
   ],
+  // --- Takeaways ---
   takeaways: [
     'Trust and clarity drive conversions in high-consideration services.',
     'SEO-first structure delivers compounding results.',
     'Direct, founder-led execution ensures quality and speed.',
+    // Add more takeaways as needed
   ],
 };
 
 export default function LawFirmCaseStudy() {
   const navigate = useNavigate();
-  const handleCtaClick = (e) => {
+  const handleCtaClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     navigate('/contact');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
     <Layout>
+      <BackArrow />
       {/* Hero Section */}
       <section className="section-padding bg-background border-b border-border">
         <div className="container-custom max-w-3xl mx-auto text-center">

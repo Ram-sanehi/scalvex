@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import { BackArrow } from '@/components/BackArrow';
 import { Separator } from '@/components/ui/separator';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
@@ -6,6 +7,7 @@ import { Link } from 'react-router-dom';
 const LocalSeoGuide = () => (
   <Layout>
     <div className="container-custom py-20 font-sans blog-fonts">
+      <BackArrow />
       <header className="mb-8 text-center max-w-2xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">Local SEO Guide for Service Providers</h1>
         <div className="flex flex-col items-center gap-2 mb-2">

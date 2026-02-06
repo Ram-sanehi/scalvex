@@ -66,8 +66,8 @@ const handler = async (req: Request): Promise<Response> => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Edge Services <noreply@edgeservices.in>",
-        to: ["hello@edgeservices.in"],
+        from: "Scalvex Contact Form <onboarding@resend.dev>",
+        to: ["ram.sanehi7158@gmail.com"], // Sandbox mode: can only send to verified email
         reply_to: email,
         subject: `New Contact Form Submission from ${name}`,
         html: `
