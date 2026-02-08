@@ -80,12 +80,12 @@ const About = () => {
                     <p className="text-sm text-muted-foreground">Founder & Lead Web Strategist</p>
                   </div>
                 </div>
-                <div className="bg-card border border-border rounded-xl overflow-hidden flex items-center justify-center transition-shadow duration-200 hover:shadow-md" style={{ aspectRatio: '3/4', maxWidth: 320, margin: '0 auto' }}>
+                <div className="bg-card border border-border rounded-xl overflow-hidden flex items-center justify-center transition-shadow duration-200 hover:shadow-md" style={{ aspectRatio: '3/4', maxWidth: 340, margin: '0 auto', width: 340, height: 453, marginTop: '-32px' }}>
                   <img
-                    src="/founder.png"
+                    src="/founder.jpg"
                     alt="Ram Sanehi, Founder"
-                    className="w-full h-full object-cover"
-                    style={{ display: 'block' }}
+                    className="object-cover"
+                    style={{ display: 'block', width: '340px', height: '453px' }}
                   />
                 </div>
               </div>
