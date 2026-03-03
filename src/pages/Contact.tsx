@@ -26,7 +26,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -39,7 +39,7 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const { error } = await supabase.functions.invoke('send-contact-email', {
         body: data,
@@ -51,7 +51,7 @@ const Contact = () => {
         title: 'Message sent!',
         description: "Thank you for reaching out. We'll get back to you within 24-48 hours.",
       });
-      
+
       form.reset();
     } catch (error) {
       console.error('Error sending message:', error);
@@ -112,11 +112,11 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-medium mb-1 text-base">Email</h4>
-                        <a 
-                          href="mailto:hello@scalvex.com" 
+                        <a
+                          href="mailto:ram@scalvex.in"
                           className="text-muted-foreground hover:text-primary transition-colors text-sm md:text-base"
                         >
-                          scalvex1@gmail.com
+                          ram@scalvex.in
                         </a>
                       </div>
                     </div>

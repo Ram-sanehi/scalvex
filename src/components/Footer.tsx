@@ -3,7 +3,7 @@ import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 import Medium from '@/components/ui/medium';
 
 const Footer = () => {
-  const currentYear = 2024; // Updated year
+  const currentYear = 2026; // Updated year
 
   return (
     <footer className="bg-primary text-primary-foreground text-sm">
@@ -13,11 +13,11 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-lg font-bold mb-2 text-primary-foreground">Scalvex</h3>
             <p className="text-primary-foreground/80 max-w-md text-sm mb-2">
-              SEO-driven websites for service businesses that want consistent leads. 
+              SEO-driven websites for service businesses that want consistent leads.
               Built with performance and visibility from day one.
             </p>
             <p className="text-primary-foreground/80 text-sm">
-              Email: <a href="mailto:scalvex1@gmail.com" className="underline hover:text-accent">scalvex1@gmail.com</a>
+              Email: <a href="mailto:ram@scalvex.in" className="underline hover:text-accent">ram@scalvex.in</a>
             </p>
           </div>
 

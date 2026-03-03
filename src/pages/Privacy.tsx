@@ -198,10 +198,10 @@ const Privacy = () => (
           <p className="mt-2">
             Requests can be sent to{' '}
             <a
-              href="mailto:scalvex1@gmail.com"
+              href="mailto:ram@scalvex.in"
               className="text-accent underline"
             >
-              scalvex1@gmail.com
+              ram@scalvex.in
             </a>
           </p>
         </Card>

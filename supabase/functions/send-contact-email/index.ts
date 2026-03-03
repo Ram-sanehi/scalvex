@@ -21,7 +21,7 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
-    
+
     if (!resendApiKey) {
       console.error("RESEND_API_KEY not configured");
       return new Response(

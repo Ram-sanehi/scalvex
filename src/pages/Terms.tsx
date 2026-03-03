@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 
 const Terms = () => {
-  const contactEmail = 'scalvex1@gmail.com';
+  const contactEmail = 'ram@scalvex.in';
 
   return (
     <Layout>
