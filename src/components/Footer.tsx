@@ -84,7 +84,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-3">
               <a
-                href="https://medium.com/@scalvex"
+                href="https://medium.com/@vish6933"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -93,7 +93,7 @@ const Footer = () => {
                 <Medium className="h-4 w-4" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ram-sanehi-437707282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -102,7 +102,7 @@ const Footer = () => {
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/Vishwakarm4095"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -111,7 +111,7 @@ const Footer = () => {
                 <Twitter className="h-4 w-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/its_scalvex?igsh=bG5vbTZ6bHEzNGRu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -120,7 +120,7 @@ const Footer = () => {
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61586723681789"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
