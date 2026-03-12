@@ -93,7 +93,7 @@ const Footer = () => {
                 <Medium className="h-4 w-4" />
               </a>
               <a
-                href="https://www.linkedin.com/in/ram-sanehi-437707282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                href="https://www.linkedin.com/in/ram-sanehi-437707282/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -111,7 +111,7 @@ const Footer = () => {
                 <Twitter className="h-4 w-4" />
               </a>
               <a
-                href="https://www.instagram.com/its_scalvex?igsh=bG5vbTZ6bHEzNGRu"
+                href="https://www.instagram.com/its_scalvex/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
