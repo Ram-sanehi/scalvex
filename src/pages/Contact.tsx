@@ -1,89 +1,58 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import Layout from '@/components/Layout';
 import FadeInSection from '@/components/FadeInSection';
-import { Mail, Clock, Send, Shield } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
-
-const contactSchema = z.object({
-  name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
-  email: z.string().trim().email('Please enter a valid email').max(255, 'Email must be less than 255 characters'),
-  company: z.string().trim().max(100, 'Company name must be less than 100 characters').optional(),
-  message: z.string().trim().min(10, 'Message must be at least 10 characters').max(2000, 'Message must be less than 2000 characters'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { Mail, Clock, Shield, Calendar, Send } from 'lucide-react';
+import { ContactForm } from '@/components/ContactForm';
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      company: '',
-      message: '',
-    },
-  });
-
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: data,
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: 'Message sent!',
-        description: "Thank you for reaching out. We'll get back to you within 24-48 hours.",
-      });
-
-      form.reset();
-    } catch (error) {
-      console.error('Error sending message:', error);
-      toast({
-        title: 'Something went wrong',
-        description: 'Please try again or email us directly.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-
-
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
+      <section className="section-padding bg-background py-20">
+        <div className="container-custom max-w-4xl mx-auto">
           <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-4 text-2xl font-semibold">Let's Talk About Your Project</h2>
-              <p className="text-base md:text-lg text-muted-foreground">
-                Tell us about your goals and we'll get back to you within 24 hours with actionable insights.
+            <div className="text-center flex flex-col items-center">
+              <div className="inline-flex items-center gap-2 bg-accent/5 border border-accent/20 rounded-full px-3.5 py-1 mb-6 text-xs text-accent font-medium uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span>Start a Conversation</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-foreground">
+                Let's Talk About Your Project
+              </h1>
+              <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                Tell us about your business, goals, and current challenges. We’ll review your website, visibility, and growth opportunities before recommending anything.
               </p>
-              <div className="mt-6 text-sm text-muted-foreground">
-                <span className="block mb-1">We take on a limited number of projects to maintain quality.</span>
-                <span className="block mb-1">We don’t offer templates, rushed builds, or SEO as an afterthought.</span>
-                <span className="block mb-1">Projects are handled directly by the founder with clear milestones.</span>
-                <span className="block mb-1">Pricing reflects scope, complexity, and long-term value.</span>
-                <span className="block mb-1">Every inquiry is reviewed personally. No automation.</span>
+              
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full text-left">
+                <div className="p-5 rounded-2xl border border-border/50 hover:border-accent/30 bg-card/60 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(59,175,218,0.04)] flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-xs text-muted-foreground leading-relaxed">
+                    <strong className="text-foreground block mb-0.5 font-bold">Thoughtful Collaboration</strong>
+                    Strategic engagement directly with the founder at every milestone.
+                  </span>
+                </div>
+                <div className="p-5 rounded-2xl border border-border/50 hover:border-accent/30 bg-card/60 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(59,175,218,0.04)] flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-xs text-muted-foreground leading-relaxed">
+                    <strong className="text-foreground block mb-0.5 font-bold">Quality Over Volume</strong>
+                    We take on a limited number of projects to maintain focus and attention to detail.
+                  </span>
+                </div>
+                <div className="p-5 rounded-2xl border border-border/50 hover:border-accent/30 bg-card/60 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(59,175,218,0.04)] flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-xs text-muted-foreground leading-relaxed">
+                    <strong className="text-foreground block mb-0.5 font-bold">Strategic Execution</strong>
+                    Tailored strategy and clean code systems designed for long-term growth.
+                  </span>
+                </div>
+                <div className="p-5 rounded-2xl border border-border/50 hover:border-accent/30 bg-card/60 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(59,175,218,0.04)] flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span className="text-xs text-muted-foreground leading-relaxed">
+                    <strong className="text-foreground block mb-0.5 font-bold">Direct Communication</strong>
+                    No middle layers or automation between your goals and our execution.
+                  </span>
+                </div>
               </div>
             </div>
           </FadeInSection>
@@ -91,30 +60,33 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-background/50 border-t border-border/45 py-16">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className="grid lg:grid-cols-3 gap-12 items-start">
               {/* Contact Info */}
-              <FadeInSection>
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-                    <p className="text-muted-foreground mb-8 text-sm md:text-base">
-                      Ready to discuss your project? Fill out the form and we'll schedule a no-pressure consultation.
+              <FadeInSection className="lg:col-span-1">
+                <div className="border border-border/50 hover:border-accent/30 rounded-3xl bg-card/85 backdrop-blur-sm p-6 sm:p-8 space-y-8 relative overflow-hidden transition-colors duration-500 shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
+                  {/* Soft background blue gradient highlight */}
+                  <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-accent/[0.03] to-transparent pointer-events-none" />
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-bold mb-3 text-foreground">Contact Information</h3>
+                    <p className="text-muted-foreground/90 text-sm leading-relaxed mb-6">
+                      Ready to discuss your project? Select a time for a growth call or send a written inquiry using the tabs.
                     </p>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-6 relative z-10">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Mail className="h-5 w-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-accent/5 border border-accent/20 flex items-center justify-center flex-shrink-0 text-accent">
+                        <Mail className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-medium mb-1 text-base">Email</h4>
+                        <h4 className="font-bold text-sm text-foreground mb-1">Email Directly</h4>
                         <a
                           href="mailto:ram@scalvex.in"
-                          className="text-muted-foreground hover:text-primary transition-colors text-sm md:text-base"
+                          className="text-muted-foreground hover:text-accent transition-colors text-sm font-medium"
                         >
                           ram@scalvex.in
                         </a>
@@ -122,25 +94,25 @@ const Contact = () => {
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Clock className="h-5 w-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-accent/5 border border-accent/20 flex items-center justify-center flex-shrink-0 text-accent">
+                        <Clock className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-medium mb-1 text-base">Response Time</h4>
-                        <p className="text-muted-foreground text-sm md:text-base">
-                          We respond within 24 hours
+                        <h4 className="font-bold text-sm text-foreground mb-1">Response Time</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          We personally review all submissions and respond within 24 hours.
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Shield className="h-5 w-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-accent/5 border border-accent/20 flex items-center justify-center flex-shrink-0 text-accent">
+                        <Shield className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-medium mb-1 text-base">No-Pressure Consultation</h4>
-                        <p className="text-muted-foreground text-sm md:text-base">
-                          Free audit with actionable insights — whether you work with us or not
+                        <h4 className="font-bold text-sm text-foreground mb-1">Actionable Review</h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          Every inquiry includes a practical review of your current website visibility, structure, and user experience — even if we don’t end up working together.
                         </p>
                       </div>
                     </div>
@@ -148,92 +120,54 @@ const Contact = () => {
                 </div>
               </FadeInSection>
 
-              {/* Contact Form */}
-              <FadeInSection delay={100}>
-                <div className="lg:col-span-2">
-                  <Card className="transition-shadow duration-200 hover:shadow-md">
-                    <CardContent className="p-8">
-                      <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                          <div className="grid sm:grid-cols-2 gap-6">
-                            <FormField
-                              control={form.control}
-                              name="name"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>Name *</FormLabel>
-                                  <FormControl>
-                                    <Input placeholder="Your name" {...field} />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
+              <FadeInSection delay={100} className="lg:col-span-2">
+                <Tabs defaultValue="booking" className="w-full">
+                  <TabsList className="grid grid-cols-2 mb-6 p-1 bg-muted/40 border border-border/30 rounded-full">
+                    <TabsTrigger value="booking" className="flex items-center justify-center gap-2 rounded-full py-2.5 transition-all text-sm font-semibold data-[state=active]:bg-background data-[state=active]:shadow-sm data-[state=active]:text-accent">
+                      <Calendar className="h-4 w-4" /> Book Strategy Call
+                    </TabsTrigger>
+                    <TabsTrigger value="message" className="flex items-center justify-center gap-2 rounded-full py-2.5 transition-all text-sm font-semibold data-[state=active]:bg-background data-[state=active]:shadow-sm data-[state=active]:text-accent">
+                      <Send className="h-4 w-4" /> Send Written Inquiry
+                    </TabsTrigger>
+                  </TabsList>
 
-                            <FormField
-                              control={form.control}
-                              name="email"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>Email *</FormLabel>
-                                  <FormControl>
-                                    <Input type="email" placeholder="your@email.com" {...field} />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                          </div>
-
-                          <FormField
-                            control={form.control}
-                            name="company"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Company (optional)</FormLabel>
-                                <FormControl>
-                                  <Input placeholder="Your company name" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
+                  <TabsContent value="booking">
+                    <Card className="border border-border/50 hover:border-accent/30 rounded-3xl bg-card/85 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden transition-colors duration-500">
+                      <CardContent className="p-6 sm:p-8">
+                        <div className="mb-6">
+                          <h3 className="text-lg font-bold text-foreground mb-1">Schedule a Strategy Call</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            Book a focused growth consultation directly with the founder to discuss visibility, website performance, positioning, and lead generation opportunities.
+                          </p>
+                        </div>
+                        <div className="w-full rounded-2xl overflow-hidden border border-border/40 bg-card shadow-inner animate-fade-in" style={{ height: '580px' }}>
+                          <iframe
+                            src="https://calendly.com/scalvex-ram/30min?embed_domain=scalvex.in&embed_type=Inline&hide_landing_page_details=1&background_color=ffffff&text_color=0f2a44&primary_color=3bafda"
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            title="Schedule Call"
+                            loading="lazy"
                           />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
 
-
-
-                          <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Tell us about your project *</FormLabel>
-                                <FormControl>
-                                  <Textarea
-                                    placeholder="What are you looking to achieve? What challenges are you facing?"
-                                    className="min-h-[150px]"
-                                    {...field}
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-
-                          <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
-                            {isSubmitting ? (
-                              'Sending...'
-                            ) : (
-                              <>
-                                <Send className="h-4 w-4 mr-2" />
-                                Send Message
-                              </>
-                            )}
-                          </Button>
-                        </form>
-                      </Form>
-                    </CardContent>
-                  </Card>
-                </div>
+                  <TabsContent value="message">
+                    <Card className="border border-border/50 hover:border-accent/30 rounded-3xl bg-card/85 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden transition-colors duration-500">
+                      <CardContent className="p-6 sm:p-8">
+                        <div className="mb-6">
+                          <h3 className="text-lg font-bold text-foreground mb-1">Send a Written Inquiry</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed text-left mb-6">
+                            Prefer to share details in writing? Complete the form below, and we'll analyze your current layout before getting back to you.
+                          </p>
+                          <ContactForm />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
               </FadeInSection>
             </div>
           </div>

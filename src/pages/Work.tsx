@@ -38,6 +38,31 @@ const Work = () => {
     },
     {
       featured: true,
+      title: 'Sanjh Boutique',
+      image: '/sanjhboutique.png',
+      type: 'Case Study',
+      context:
+        'Luxury digital showroom and customer portal for a bespoke designer boutique.',
+      problem:
+        'The previous online presence lacked structural organization for custom design processes and failed to offer secure, personalized client credentials or dynamic booking flows.',
+      goal:
+        'Create a luxury digital showroom with seamless booking pipelines, a clean and modern design system, and custom contact forms to improve client inquiry quality.',
+      strategy:
+        'Focused on responsive visual hierarchies, desaturated maps for branding cohesion, clean state-managed accordions, and flexible authentication models.',
+      execution:
+        'Developed a bespoke homepage process grid, interactive product quick-views with simulated back views, custom sepia Google maps integration, and a mobile-optimized floating WhatsApp consultation bar.',
+      outcome:
+        'Rebuilt a high-end designer boutique experience, introducing interactive product quick views, custom styling accordion systems, and integrated Supabase-backed user authentication.',
+      tools: [
+        'React',
+        'Tailwind CSS',
+        'Supabase',
+        'PostgreSQL'
+      ],
+      link: '/sanjhboutiquecasestudy'
+    },
+    {
+      featured: true,
       title: 'Nilkamal Interiors & Furnitures',
       image: '/nilkamal.png',
       type: 'Client Project',

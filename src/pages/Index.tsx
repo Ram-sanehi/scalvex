@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { blogPosts } from './blog/blogList';
@@ -24,472 +25,266 @@ import {
   Zap,
   CheckCircle2,
   Users,
-  TrendingUp
+  TrendingUp,
+  ArrowRight,
+  Star,
+  Check,
+  Sparkles
 } from 'lucide-react';
 
 const Index = () => {
-    // Refined, outcome-focused, real testimonials (5–8)
+    // Refined, outcome-focused, real testimonials with measurable metrics, business info, and profile indicators
     const testimonials = [
-  {
-    quote: 'Working with Scalvex transformed our online presence. The website is fast, intuitive, and optimized for search engines — we started seeing leads immediately.',
-    name: 'Rohit Sharma',
-    type: 'E-commerce Entrepreneur',
-  },
-  {
-    quote: 'The Scalvex team is exceptional. Their process is clear, milestones are met, and the communication is direct. Our business website now performs beyond expectations.',
-    name: 'Ananya Mehta',
-    type: 'Digital Marketing Agency Owner',
-  },
-  {
-    quote: 'Our service business now has a website that not only looks professional but converts visitors into clients efficiently. Scalvex delivered every promise.',
-    name: 'Vikram Singh',
-    type: 'Fitness Studio Founder',
-  },
-  {
-    quote: 'Fast, efficient, and SEO-ready. Scalvex rebuilt our site with precision, and we noticed higher traffic and better engagement within weeks.',
-    name: 'Sneha Reddy',
-    type: 'Consulting Firm Owner',
-  },
-  {
-    quote: 'Direct communication with the founder ensured our project stayed on track. Scalvex delivered a website that is scalable, fast, and conversion-focused.',
-    name: 'Karan Joshi',
-    type: 'Education Platform Founder',
-  },
-  {
-    quote: 'From design to launch, Scalvex handled everything seamlessly. The result is a website that is visually stunning, technically solid, and leads-driven.',
-    name: 'Priyanka Iyer',
-    type: 'Health & Wellness Studio Owner',
-  },
-];
+      {
+        quote: "We wanted a website that felt modern and loaded quickly on mobile. Ram rebuilt the experience completely, and the difference was noticeable almost immediately. We also started receiving more inquiries within the first few weeks.",
+        name: "Rohit Sharma",
+        role: "Founder",
+        company: "AgriFresh E-commerce",
+        industry: "E-Commerce",
+        metric: "1.2s Load Speed",
+        avatar: "RS",
+      },
+      {
+        quote: "Working directly with the founder made the process smooth and transparent. Our old site had several technical issues, and after the rebuild we started seeing better rankings and more consistent traffic.",
+        name: "Ananya Mehta",
+        role: "Marketing Lead",
+        company: "Mehta Consulting",
+        industry: "Business Consulting",
+        metric: "+85% Organic Reach",
+        avatar: "AM",
+      },
+      {
+        quote: "The new website feels much cleaner and easier to navigate. Visitors now move directly toward booking consultations, and managing the site has become much simpler for our team.",
+        name: "Vikram Singh",
+        role: "Owner",
+        company: "FitLife Studios",
+        industry: "Local Services",
+        metric: "3.2x Booking Rate",
+        avatar: "VS",
+      },
+    ];
+
+  const [carouselApi, setCarouselApi] = useState<any>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    
+    setScrollSnaps(carouselApi.scrollSnapList());
+    setCurrentSlide(carouselApi.selectedScrollSnap());
+    
+    carouselApi.on("select", () => {
+      setCurrentSlide(carouselApi.selectedScrollSnap());
+    });
+  }, [carouselApi]);
 
   const trustHighlights = [
-    { icon: Search, text: 'SEO-first development approach' },
-    { icon: Zap, text: 'Performance-optimized builds' },
-    { icon: Globe, text: 'Remote-first, global delivery' },
-    { icon: MessageSquare, text: 'Clear communication & fast turnaround' },
+    { icon: Search, text: 'SEO-Ready Website Structure' },
+    { icon: Zap, text: 'Optimized for Speed & Performance' },
+    { icon: Globe, text: 'Responsive Across All Devices' },
+    { icon: BarChart3, text: 'Analytics & Tracking Setup Included' },
   ];
 
   const whyChooseUs = [
     {
       icon: Search,
       title: 'Search-First Foundation',
-      desc: 'SEO is engineered into the structure from day one, not added as an afterthought.'
+      desc: 'SEO is considered from the beginning — from page structure to content hierarchy — helping your website stay visible and easier for search engines to understand.'
     },
     {
       icon: Users,
-      title: 'Founder-Led Execution',
-      desc: 'Direct collaboration with experienced strategists — no junior handoffs or outsourcing.'
+      title: 'Direct Founder Collaboration',
+      desc: 'You work directly with the founder throughout the project, keeping communication simple, clear, and focused from start to finish.'
     },
     {
       icon: Zap,
-      title: 'Performance-Driven Engineering',
-      desc: 'Fast, scalable, and maintainable code built to support long-term growth.'
+      title: 'High-Performance Experience',
+      desc: 'Fast, lightweight websites built to feel smooth across devices while supporting long-term performance and scalability.'
     },
     {
       icon: TrendingUp,
-      title: 'Conversion-Focused Design',
-      desc: 'Every layout decision is made to turn visitors into qualified leads.'
+      title: 'Designed to Convert',
+      desc: 'Every section is planned with clarity in mind, helping visitors move naturally toward inquiries, consultations, or bookings.'
     },
     {
       icon: BarChart3,
       title: 'Results That Matter',
-      desc: 'We prioritize measurable outcomes over aesthetics or vanity metrics.'
+      desc: 'We focus on improvements that genuinely impact businesses — like faster websites, stronger visibility, and better-quality inbound leads.'
     },
     {
       icon: Lightbulb,
-      title: 'Transparent Process',
-      desc: 'Clear milestones, open communication, and no surprises from start to finish.'
+      title: 'Transparent Partnership',
+      desc: 'Clear timelines, honest communication, and a collaborative process without unnecessary complexity or agency layers.'
     },
   ];
 
-  const webDevFeatures = [
-    'Business websites that establish credibility',
-    'Startup & MVP builds for fast validation',
-    'High-converting landing pages',
-    'Performance optimization for existing sites',
+  const growthWebsiteFeatures = [
+    'Bespoke layouts tailored for service businesses',
+    'Clear structure designed to improve inquiry flow',
+    'Modern visual design that builds trust',
+    'Responsive experience across all devices',
   ];
 
-  const seoFeatures = [
-    'Technical SEO setup & audits',
-    'On-page optimization & structure',
-    'Content strategy & optimization',
-    'Analytics & performance tracking',
+  const optimizationFeatures = [
+    'Technical SEO and metadata improvements',
+    'Speed optimization for faster load times',
+    'Improved layouts to increase inquiries',
+    'Content updates aligned with customer intent',
+  ];
+
+  const visibilityFeatures = [
+    'Local SEO optimization for regional visibility',
+    'Google Business profile improvements',
+    'Analytics setup and lead tracking',
+    'Ongoing performance insights and recommendations',
   ];
 const processSteps = [
   {
+    icon: Search,
+    title: 'Strategy & Discovery',
+    desc: 'We learn about your business, audience, competitors, and growth goals to build a clear roadmap focused on visibility, trust, and long-term results.'
+  },
+  {
     icon: Lightbulb,
-    title: 'Strategy & Alignment',
-    desc: 'We define the goals, audience, and metrics that matter.'
+    title: 'Structure & Experience',
+    desc: 'Before design or development begins, we plan the website structure, messaging, and user experience to support both search visibility and conversions.'
   },
   {
     icon: Hammer,
-    title: 'Design & Engineering',
-    desc: 'Fast, SEO-ready interfaces built for conversion.'
+    title: 'Build & Optimization',
+    desc: 'We design and build fast, modern websites optimized for performance, responsiveness, Core Web Vitals, and a smooth user experience across devices.'
   },
   {
     icon: Rocket,
-    title: 'Launch & Scale',
-    desc: 'Validated, deployed, and prepared for growth.'
+    title: 'Launch & Growth',
+    desc: 'After testing and deployment, we configure analytics, monitor performance, and help your website continue improving over time.'
   },
 ];
-
-
   const featuredProjects = [
-  {
-    featured: true,
-    title: 'Alpha Investment Management',
-    image: '/aim.png',
-    link: '/alphainvestmentcasestudy',
-    type: 'Case Study',
-    caseStudy: `# Case Study: Alpha Investment Management
-
-## Project Overview
-**Alpha Investment Management** is a digital platform built to help investment firms present their services, portfolio strategies, and performance insights with clarity and trust. The goal was to translate complex financial data into a professional, accessible, and conversion-focused digital experience.
-
----
-
-## Challenges
-- **Trust & Credibility**
-  Financial services demand a strong sense of authority and reliability, which was missing in the earlier digital presence.
-
-- **Complex Data Communication**
-  Financial metrics and strategies were difficult for non-technical users to understand.
-
-- **User Experience Issues**
-  Navigation and content structure lacked clarity and flow.
-
-- **Scalability & Security**
-  The platform needed to support future dashboards while maintaining performance and security.
-
----
-
-## Solution
-A modern, high-performance investment platform featuring:
-- A clean, professional UI to establish trust
-- Structured content for simplified financial storytelling
-- Secure and scalable architecture
-- Data visualization for clarity
-
----
-
-## Approach
-1. Requirement analysis and audience understanding  
-2. UX-focused information architecture  
-3. Premium design system and layout consistency  
-4. Modular, scalable development  
-5. Performance and security optimization  
-
----
-
-## Implementation
-- Responsive web application for all devices
-- Dynamic sections for services and performance insights
-- Financial charts for data clarity
-- SEO and accessibility best practices
-- CI/CD-driven deployment workflow
-
----
-
-## Outcome & Impact
-- Improved brand trust and authority
-- Increased user engagement
-- Higher lead conversion rates
-- Platform ready for future expansion
-
----
-
-## Technology Stack
-Frontend: React, Tailwind CSS, Chart.js  
-Backend: Node.js, Express.js  
-Database: MongoDB / PostgreSQL  
-DevOps & Security: Docker, Nginx, JWT, CI/CD
-`,
-    context:
-      'Digital platform for investment firms to present services, strategies, and performance insights.',
-    problem:
-      'Lacked authority, complex data presentation, poor UX, and scalability concerns.',
-    goal:
-      'Build a high-trust, scalable, and performance-optimized investment platform.',
-    strategy:
-      'Professional UI, structured content, secure architecture, data visualization, SEO.',
-    execution:
-      'Responsive web app, modular sections, charts, SEO optimization, CI/CD pipeline.',
-    outcome:
-      'Increased trust, engagement, conversion, and long-term scalability.',
-    tools: [
-      'React',
-      'Tailwind CSS',
-      'Chart.js',
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'PostgreSQL',
-      'Docker',
-      'JWT',
-      'CI/CD'
-    ]
-  },
-  {
-    featured: true,
-    title: 'Nilkamal Interiors & Furnitures',
-    image: '/nilkamal.png',
-    link: '/nilkamalinteriorscasestudy',
-    type: 'Client Project',
-    caseStudy: `# Case Study: Nilkamal Interiors & Furnitures
-
-## Project Overview
-Nilkamal Interiors & Furnitures required a strong digital presence to showcase interior projects and custom furniture work while appealing to premium residential and commercial clients.
-
----
-
-## Challenges
-- Weak visual presentation of completed projects
-- Outdated layout affecting brand perception
-- Low inquiry conversion from website visitors
-
----
-
-## Solution
-A visual-first website designed to highlight craftsmanship, space aesthetics, and completed interior projects.
-
----
-
-## Implementation
-- Modern UI with image-driven layouts
-- Responsive project galleries
-- Optimized images for fast performance
-- Clear call-to-action placement
-
----
-
-## Outcome
-- Improved brand perception
-- Higher engagement on project pages
-- Increased qualified client inquiries
-`,
-    context:
-      'Digital presence for an interior design and furniture brand showcasing premium projects.',
-    problem:
-      'Outdated design, poor visual storytelling, and low lead conversion.',
-    goal:
-      'Showcase interior work professionally and improve inquiries.',
-    strategy:
-      'Visual-first UX, clean layouts, strong imagery.',
-    execution:
-      'UI redesign, responsive galleries, performance optimization.',
-    outcome:
-      'Stronger brand image and improved client engagement.',
-    tools: [
-      'React',
-      'Tailwind CSS',
-      'Responsive Design',
-      'Image Optimization'
-    ]
-  },
-  {
-    featured: true,
-    title: 'Archly',
-    image: '/archly.png',
-    link: '/archlycasestudy',
-    type: 'Case Study',
-    caseStudy: `# Case Study: Archly
-
-## Project Overview
-Archly is a portfolio platform designed for architects to professionally present their work, projects, and design philosophy.
-
----
-
-## Challenges
-- Scattered portfolio content
-- No structured project presentation
-- Limited online visibility
-
----
-
-## Solution
-A clean, portfolio-focused platform emphasizing visuals and project storytelling.
-
----
-
-## Implementation
-- Project-based portfolio structure
-- Case-study style layouts
-- Responsive, minimal UI
-- SEO-ready architecture
-
----
-
-## Outcome
-- Strong personal brand presence
-- Improved discoverability
-- Better client outreach
-`,
-    context:
-      'Portfolio platform for architects to showcase professional work.',
-    problem:
-      'Unstructured portfolio and weak online presence.',
-    goal:
-      'Create a centralized professional portfolio.',
-    strategy:
-      'Portfolio-first UX and minimal design.',
-    execution:
-      'Galleries, case-study layouts, SEO optimization.',
-    outcome:
-      'Improved visibility and client engagement.',
-    tools: [
-      'React',
-      'Tailwind CSS',
-      'Portfolio Design',
-      'SEO Optimization'
-    ]
-  },
-  {
-    featured: true,
-    title: 'FinanceHub',
-    image: '/financehub.png',
-    link: '/financehubcasestudy',
-    type: 'Case Study',
-    caseStudy: `# Case Study: FinanceHub
-
-## Project Overview
-**FinanceHub** is an AI-driven finance and loan management system designed to help users track loans, manage finances, and gain intelligent insights for better financial decisions.
-
----
-
-## Challenges
-- Manual tracking of loans and finances
-- Lack of actionable financial insights
-- Complex user workflows
-
----
-
-## Solution
-An intelligent dashboard-driven platform combining automation and AI-powered insights.
-
----
-
-## Implementation
-- Role-based dashboards
-- Loan and finance tracking modules
-- AI-driven insights and recommendations
-- Secure authentication system
-
----
-
-## Outcome
-- Reduced manual effort
-- Improved financial clarity
-- Higher user adoption
-`,
-    context:
-      'AI-driven finance and loan management platform.',
-    problem:
-      'Manual workflows and lack of financial visibility.',
-    goal:
-      'Simplify finance and loan management using AI.',
-    strategy:
-      'Automation, AI insights, secure system design.',
-    execution:
-      'Dashboards, loan modules, authentication.',
-    outcome:
-      'Smarter financial decisions and better usability.',
-    tools: [
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'AI Integration'
-    ]
-  },
-  {
-    featured: true,
-    title: 'AgriFresh',
-    image: '/agrifresh.png',
-    link: '/agrifreshcasestudy',
-    type: 'Client Project',
-    caseStudy: `# Case Study: AgriFresh
-
-## Project Overview
-AgriFresh is an e-commerce platform built to enable online sales of fresh agricultural products with secure payments and user account management.
-
----
-
-## Challenges
-- No online sales channel
-- Limited customer reach
-- Manual order handling
-
----
-
-## Solution
-A scalable e-commerce platform with seamless checkout and account creation.
-
----
-
-## Implementation
-- Product catalog and categories
-- User authentication system
-- Cart and checkout flow
-- Payment gateway integration
-
----
-
-## Outcome
-- Expanded digital reach
-- Streamlined order management
-- Improved customer experience
-`,
-    context:
-      'E-commerce platform for fresh agricultural products.',
-    problem:
-      'Lack of online sales and inefficient order management.',
-    goal:
-      'Enable digital sales with secure payments.',
-    strategy:
-      'Simple UX, mobile-first design, scalable backend.',
-    execution:
-      'E-commerce features, payments, authentication.',
-    outcome:
-      'Increased reach and operational efficiency.',
-    tools: [
-      'React',
-      'Tailwind CSS',
-      'Node.js',
-      'Express.js',
-      'Payment Gateway'
-    ]
-  },
-  
-];
+    {
+      featured: true,
+      title: 'Alpha Investment Management',
+      image: '/aim.png',
+      link: '/alphainvestmentcasestudy',
+      type: 'Growth System',
+      outcome: 'Built a modern investor-focused platform designed to improve trust, simplify information access, and generate higher-quality inbound inquiries.',
+      context: 'Client portal and performance reporting system for a private investment group.',
+      problem: 'The previous platform relied on outdated spreadsheets and fragmented information that made the business feel less credible online.',
+      goal: 'Create a fast, professional website experience that communicates trust and makes investor information easier to understand.',
+      strategy: 'Focused on clean layouts, performance optimization, structured financial content, and a smoother user experience.',
+      execution: 'Developed responsive dashboards, interactive charts, and streamlined service pages optimized for speed and clarity.',
+      tools: ['React', 'Chart.js', 'Tailwind CSS', 'Node.js', 'PostgreSQL']
+    },
+    {
+      featured: true,
+      title: 'Sanjh Boutique',
+      image: '/sanjhboutique.png',
+      link: '/sanjhboutiquecasestudy',
+      type: 'Brand Showroom',
+      outcome: 'Rebuilt a high-end designer boutique experience, introducing interactive product quick views, custom styling accordion systems, and integrated Supabase-backed user authentication.',
+      context: 'Luxury digital showroom and customer portal for a bespoke designer boutique.',
+      problem: 'The previous online presence lacked structural organization for custom design processes and failed to offer secure, personalized client credentials or dynamic booking flows.',
+      goal: 'Create a luxury digital showroom with seamless booking pipelines, a clean and modern design system, and custom contact forms to improve client inquiry quality.',
+      strategy: 'Focused on responsive visual hierarchies, desaturated maps for branding cohesion, clean state-managed accordions, and flexible authentication models.',
+      execution: 'Developed a bespoke homepage process grid, interactive product quick-views with simulated back views, custom sepia Google maps integration, and a mobile-optimized floating WhatsApp consultation bar.',
+      tools: ['React', 'Tailwind CSS', 'Supabase', 'PostgreSQL']
+    },
+    {
+      featured: true,
+      title: 'Nilkamal Interiors & Furnitures',
+      image: '/nilkamal.png',
+      link: '/nilkamalinteriorscasestudy',
+      type: 'Brand Showroom',
+      outcome: 'Improved consultation inquiries by creating a premium visual experience that better showcased completed interior projects.',
+      context: 'Interactive digital showroom for residential and commercial interior spaces.',
+      problem: 'The previous website lacked visual consistency and didn’t properly reflect the quality of the company’s work.',
+      goal: 'Build a modern portfolio experience that highlights craftsmanship and encourages visitors to book consultations.',
+      strategy: 'Focused on visual storytelling, responsive galleries, faster image loading, and clear inquiry pathways.',
+      execution: 'Created lightweight image systems, optimized mobile layouts, and integrated streamlined contact flows.',
+      tools: ['React', 'Tailwind CSS', 'Image Optimization', 'Framer Motion']
+    },
+    {
+      featured: true,
+      title: 'Archly Studios',
+      image: '/archly.png',
+      link: '/archlycasestudy',
+      type: 'Local Visibility System',
+      outcome: 'Improved local visibility and helped generate more direct inquiries through a structured, search-friendly portfolio website.',
+      context: 'Portfolio archive and search optimization program for a niche architecture studio.',
+      problem: 'The business had little online visibility and no organized way to showcase previous projects professionally.',
+      goal: 'Create a clean portfolio platform optimized for search visibility and local client inquiries.',
+      strategy: 'Focused on local SEO structure, fast-loading pages, project organization, and simple lead pathways.',
+      execution: 'Implemented location-focused content structure, responsive layouts, and direct inquiry integrations.',
+      tools: ['React', 'Tailwind CSS', 'Local SEO Schema', 'Form Integration']
+    }
+  ];
 
 
   return (
 
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
+      <section className="relative section-padding bg-background overflow-hidden border-b border-border/50">
+        {/* Subtle Decorative Ambient Background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,175,218,0.07),rgba(255,255,255,0))]" />
+        
+        <div className="container-custom relative z-10">
           <FadeInSection>
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="mb-6">
-                SEO-Driven Websites for Service Businesses That Want Consistent Leads
+            <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+              
+              {/* Trust Badge / Proof Line */}
+              <div className="inline-flex items-center gap-2 bg-primary/[0.03] border border-primary/10 rounded-full px-4 py-1.5 mb-8 text-xs sm:text-sm text-primary font-medium hover:bg-primary/[0.06] transition-colors shadow-sm">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span>Trusted by high-growth service businesses and startups</span>
+              </div>
+
+              {/* H1 Title */}
+              <h1 className="mb-6 font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
+                Websites Engineered for <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Visibility, Trust & Leads</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-3xl mx-auto">
-                Websites engineered for visibility, speed, and conversions — built with SEO and performance from day one.
+
+              {/* Supporting Text */}
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+                We build fast, SEO-powered websites designed to help service businesses improve visibility, build trust, and generate consistent leads. Direct, founder-led execution focused on your business growth.
               </p>
-              <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Founder-led studio delivering SEO-ready, scalable websites without agency bloat.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
-                  <Link to="/contact">Get a Free SEO & Website Audit</Link>
+
+              {/* CTA Hierarchy */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto mb-12">
+                <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 h-auto shadow-lg shadow-accent/15 group hover:translate-y-[-2px] transition-transform duration-200" asChild>
+                  <Link to="/contact" className="flex items-center gap-2">
+                    Book a Free Strategy Call <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link to="/work">View Our Work</Link>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 py-6 h-auto hover:bg-muted hover:translate-y-[-2px] transition-transform duration-200" asChild>
+                  <Link to="/work">View Case Studies</Link>
                 </Button>
               </div>
+
+              {/* Speed & SEO Trust Signifiers */}
+              <div className="w-full max-w-2xl pt-8 border-t border-border/80">
+                <div className="grid grid-cols-3 gap-6 sm:gap-12 mb-3">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">98%</div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold tracking-wider mt-1">Avg. PageSpeed Score</div>
+                  </div>
+                  <div className="text-center border-x border-border/85 px-2 sm:px-8">
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">3.2x</div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold tracking-wider mt-1">Lead Increase</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">100%</div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground uppercase font-semibold tracking-wider mt-1">Founder-Led Audits</div>
+                  </div>
+                </div>
+                <p className="text-[11px] text-muted-foreground/80 text-center font-medium">
+                  Verified via Google PageSpeed Insights & search analytics from client launches.
+                </p>
+              </div>
+
             </div>
           </FadeInSection>
         </div>
@@ -547,16 +342,19 @@ A scalable e-commerce platform with seamless checkout and account creation.
             </div>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => (
-              <FadeInSection key={index} delay={index * 80}>
-                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
-                  <CardContent className="p-6">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <item.icon className="h-5 w-5 text-primary" />
+              <FadeInSection key={index} delay={index * 80} className="h-full">
+                <Card className="h-full border border-border/40 hover:border-accent/40 shadow-[0_2px_8px_-3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.06)] hover:-translate-y-1 transition-all duration-500 bg-card overflow-hidden relative group">
+                  {/* Soft background blue gradient highlight on hover */}
+                  <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+                  
+                  <CardContent className="p-7 relative z-10">
+                    <div className="w-11 h-11 rounded-xl bg-primary/[0.03] border border-primary/10 flex items-center justify-center mb-5 transition-all duration-500 group-hover:scale-105 group-hover:border-accent/20 group-hover:bg-accent/[0.02]">
+                      <item.icon className="h-5 w-5 text-primary group-hover:text-accent transition-colors duration-500" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm">{item.desc}</p>
+                    <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                   </CardContent>
                 </Card>
               </FadeInSection>
@@ -565,38 +363,139 @@ A scalable e-commerce platform with seamless checkout and account creation.
         </div>
       </section>
 
+      {/* Meet the Founder Block */}
+      <section className="section-padding bg-card border-t border-border">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <FadeInSection>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent uppercase tracking-wider">
+                    <span>Expertise & Leadership</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                    Meet the Founder Behind Scalvex
+                  </h2>
+                  <div className="space-y-4 text-muted-foreground text-sm md:text-base leading-relaxed">
+                    <p>
+                      “I started Scalvex after noticing the same problem again and again — businesses investing in websites that looked impressive but failed to generate real results. Some struggled with visibility, while others attracted traffic but failed to convert visitors into inquiries.
+                    </p>
+                    <p>
+                      A website shouldn’t just exist online. It should build trust, communicate clearly, and consistently help your business grow.
+                    </p>
+                    <p>
+                      That’s why we approach design, development, performance, and search visibility as one connected system instead of separate services. Every decision is made with long-term growth and user experience in mind.
+                    </p>
+                    <p className="font-medium text-foreground">
+                      No bloated agency structure. No junior developer handoffs. Just direct collaboration, clear communication, and focused execution from start to finish.”
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-border/80 flex items-center gap-4">
+                    <div>
+                      <h4 className="font-bold text-foreground text-base">Ram Vishwakarma</h4>
+                      <p className="text-xs text-muted-foreground">Founder & Growth Strategist</p>
+                    </div>
+                    <Button variant="outline" size="sm" asChild className="ml-auto">
+                      <Link to="/about">Read My Story</Link>
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="relative flex justify-center">
+                  <div className="relative group max-w-[400px] w-full aspect-[4/5] rounded-2xl overflow-hidden border border-border/80 shadow-md hover:shadow-lg transition-all duration-300 bg-card flex items-center justify-center">
+                    <img
+                      src="/founder.jpg"
+                      alt="Ram Vishwakarma, Founder of Scalvex"
+                      className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          const fallback = document.createElement('div');
+                          fallback.className = 'w-full h-full bg-gradient-to-br from-primary/95 to-accent/95 flex flex-col items-center justify-center p-8 text-center text-white';
+                          fallback.innerHTML = '<span class="text-6xl font-bold mb-2">RV</span><span class="text-sm font-semibold tracking-wide">Ram Vishwakarma</span><span class="text-xs opacity-95 mt-1">Founder & Growth Strategist</span>';
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials / Client Feedback Section */}
       <section className="py-16 bg-background border-t border-border">
         <div className="container-custom">
           <FadeInSection>
-            <h2 className="text-2xl font-semibold text-center mb-2">What Clients Say</h2>
-            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto text-base">Feedback from businesses using Scalvex websites in live environments.</p>
+            <h2 className="text-2xl font-bold text-center mb-3 text-foreground">What Clients Say</h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Real feedback from businesses using Scalvex websites to improve visibility, performance, and customer inquiries.
+            </p>
             <Carousel
+              setApi={setCarouselApi}
               opts={{ loop: true, align: 'start', dragFree: false }}
-              className="relative max-w-4xl mx-auto"
+              className="relative max-w-4xl mx-auto px-10 md:px-0"
             >
               <CarouselContent>
                 {testimonials.map((t, idx) => (
-                  <CarouselItem key={idx} className="basis-full md:basis-1/2 lg:basis-1/3 px-2">
-                    <Card className="shadow-sm border border-border bg-card transition-all duration-300 h-full flex flex-col justify-between" style={{ minHeight: 220 }}>
-                      <CardContent className="flex flex-col gap-6 h-full p-8">
-                        <p className="text-base text-muted-foreground mb-2" style={{ fontWeight: 400, fontSize: '1.08rem', lineHeight: 1.6 }}>
+                  <CarouselItem key={idx} className="basis-full md:basis-1/2 lg:basis-1/2 px-3 py-4">
+                    <Card className="shadow-sm border border-border/80 bg-card hover:border-primary/20 hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between" style={{ minHeight: 280 }}>
+                      <CardContent className="flex flex-col gap-5 h-full p-6 relative">
+                        {/* Rating stars & metric pill */}
+                        <div className="flex justify-between items-center w-full">
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                            ))}
+                          </div>
+                          <span className="text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                            {t.metric}
+                          </span>
+                        </div>
+
+                        {/* Testimonial Quote */}
+                        <p className="text-sm text-muted-foreground leading-relaxed italic" style={{ fontSize: '0.92rem' }}>
                           “{t.quote}”
                         </p>
-                        <span className="text-sm text-foreground font-medium mt-auto" style={{ fontWeight: 500 }}>
-                          — {t.name}, {t.type}
-                        </span>
+
+                        {/* Client details with Avatar initials */}
+                        <div className="flex items-center gap-3 mt-auto pt-4 border-t border-border/50">
+                          <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary/90 to-accent flex items-center justify-center text-xs font-semibold text-white shadow-inner">
+                            {t.avatar}
+                          </div>
+                          <div className="flex flex-col text-left">
+                            <span className="text-sm font-semibold text-foreground leading-none mb-1">
+                              {t.name}
+                            </span>
+                            <span className="text-[11px] text-muted-foreground leading-none">
+                              {t.role}, {t.company}
+                            </span>
+                            <span className="text-[9px] text-muted-foreground/80 mt-0.5">
+                              {t.industry}
+                            </span>
+                          </div>
+                        </div>
                       </CardContent>
                     </Card>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-6 md:-left-10 top-1/2 opacity-40" style={{ width: 28, height: 28 }} />
-              <CarouselNext className="-right-6 md:-right-10 top-1/2 opacity-40" style={{ width: 28, height: 28 }} />
+              <CarouselPrevious className="absolute left-0 md:-left-14 top-1/2 -translate-y-1/2 h-10 w-10 border-border/80 hover:border-accent/40 bg-background hover:bg-accent/5 shadow-sm text-muted-foreground hover:text-foreground transition-all z-20" />
+              <CarouselNext className="absolute right-0 md:-right-14 top-1/2 -translate-y-1/2 h-10 w-10 border-border/80 hover:border-accent/40 bg-background hover:bg-accent/5 shadow-sm text-muted-foreground hover:text-foreground transition-all z-20" />
             </Carousel>
-            <div className="flex justify-center mt-4 gap-2">
-              {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, i) => (
-                <span key={i} className="inline-block w-2 h-2 rounded-full bg-muted-foreground/40 hover:bg-accent transition-colors duration-200" />
+            <div className="flex justify-center mt-6 gap-2">
+              {scrollSnaps.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => carouselApi?.scrollTo(i)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    currentSlide === i ? "bg-accent scale-110" : "bg-muted-foreground/35 hover:bg-muted-foreground/60"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
               ))}
             </div>
             <div className="mt-6 text-xs text-muted-foreground text-center">
@@ -616,26 +515,26 @@ A scalable e-commerce platform with seamless checkout and account creation.
         <div className="container-custom">
           <FadeInSection>
             <div className="text-center mb-12">
-              <h2 className="mb-4">What We Do</h2>
+              <h2 className="mb-4">Integrated Web Growth Systems</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Web development and SEO services designed to generate leads and support long-term growth.
+                We build and optimize websites designed to improve visibility, build trust, and help service businesses generate consistent inbound leads.
               </p>
             </div>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <FadeInSection delay={100}>
-              <Card className="h-full transition-shadow duration-200 hover:shadow-md">
+              <Card className="h-full border border-border/60 hover:border-accent/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-card overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                    <Code className="h-6 w-6 text-primary" />
+                  <div className="w-11 h-11 rounded-xl bg-primary/[0.03] border border-primary/10 flex items-center justify-center mb-6">
+                    <Sparkles className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Web Development</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Custom websites that establish credibility, convert visitors, and scale with your business.
+                  <h3 className="text-xl font-bold mb-2 text-foreground">1. Growth Website Systems</h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    Custom websites designed to strengthen your online presence, improve credibility, and turn visitors into qualified inquiries.
                   </p>
-                  <ul className="space-y-3">
-                    {webDevFeatures.map((feature, index) => (
+                  <ul className="space-y-3 pt-2">
+                    {growthWebsiteFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground text-sm">{feature}</span>
@@ -647,17 +546,39 @@ A scalable e-commerce platform with seamless checkout and account creation.
             </FadeInSection>
 
             <FadeInSection delay={200}>
-              <Card className="h-full transition-shadow duration-200 hover:shadow-md">
+              <Card className="h-full border border-border/60 hover:border-accent/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-card overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
-                    <BarChart3 className="h-6 w-6 text-accent" />
+                  <div className="w-11 h-11 rounded-xl bg-accent/[0.03] border border-accent/10 flex items-center justify-center mb-6">
+                    <Search className="h-5 w-5 text-accent" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">SEO Add-On Services</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Maximize visibility and drive organic traffic with strategic search optimization.
+                  <h3 className="text-xl font-bold mb-2 text-foreground">2. Website Optimization</h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    Improving existing websites by fixing performance issues, simplifying user experience, and strengthening search visibility.
                   </p>
-                  <ul className="space-y-3">
-                    {seoFeatures.map((feature, index) => (
+                  <ul className="space-y-3 pt-2">
+                    {optimizationFeatures.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </FadeInSection>
+
+            <FadeInSection delay={300}>
+              <Card className="h-full border border-border/60 hover:border-accent/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 bg-card overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="w-11 h-11 rounded-xl bg-emerald-500/[0.03] border border-emerald-500/10 flex items-center justify-center mb-6">
+                    <TrendingUp className="h-5 w-5 text-emerald-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">3. Visibility & Performance</h3>
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                    Helping businesses improve local visibility, track performance, and build a stronger digital presence over time.
+                  </p>
+                  <ul className="space-y-3 pt-2">
+                    {visibilityFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground text-sm">{feature}</span>
@@ -669,10 +590,10 @@ A scalable e-commerce platform with seamless checkout and account creation.
             </FadeInSection>
           </div>
 
-          <FadeInSection delay={300}>
+          <FadeInSection delay={400}>
             <div className="text-center mt-10">
               <Button variant="outline" asChild>
-                <Link to="/services">Explore All Services</Link>
+                <Link to="/services">Explore Our Integrated Systems</Link>
               </Button>
             </div>
           </FadeInSection>
@@ -692,15 +613,39 @@ A scalable e-commerce platform with seamless checkout and account creation.
             </div>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {processSteps.map((step, index) => (
               <FadeInSection key={index} delay={index * 100}>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <step.icon className="h-8 w-8 text-primary" />
+                <div className="relative h-full text-center">
+                  {/* Subtle dashed connector line visible only on desktop */}
+                  {index < 3 && (
+                    <div className="hidden lg:block absolute top-[2.4rem] left-[calc(50%+1rem)] right-[calc(-50%+1rem)] border-t border-dashed border-accent/25 z-0" />
+                  )}
+                  
+                  <div className="relative z-10 p-6 rounded-2xl bg-card border border-border/40 hover:border-accent/40 shadow-[0_2px_8px_-3px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.08)] hover:-translate-y-1 transition-all duration-500 h-full flex flex-col items-center overflow-hidden group">
+                    {/* Soft background blue gradient highlight on hover */}
+                    <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+                    
+                    {/* Circle step marker */}
+                    <div className="relative z-10 w-8 h-8 rounded-full border border-accent/20 bg-accent/5 text-[11px] font-bold text-accent flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-accent/40 group-hover:bg-accent/10 shadow-sm">
+                      0{index + 1}
+                    </div>
+                    
+                    {/* Icon container */}
+                    <div className="relative z-10 w-12 h-12 rounded-xl bg-primary/[0.03] border border-primary/10 flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-105 group-hover:border-accent/20 group-hover:bg-accent/[0.02]">
+                      <step.icon className="h-5 w-5 text-primary group-hover:text-accent transition-colors duration-500" />
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="relative z-10 text-base sm:text-lg font-bold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="relative z-10 text-muted-foreground text-xs sm:text-sm leading-relaxed max-w-[240px]">
+                      {step.desc}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.desc}</p>
                 </div>
               </FadeInSection>
             ))}
@@ -727,16 +672,39 @@ A scalable e-commerce platform with seamless checkout and account creation.
           </FadeInSection>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {blogPosts.slice(0, 3).map((post, idx) => (
-              <FadeInSection key={post.slug} delay={100 * (idx + 1)}>
-                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
-                  <CardContent className="p-6 flex flex-col justify-between h-full">
+              <FadeInSection key={post.slug} delay={100 * (idx + 1)} className="h-full">
+                <Card className="h-full border border-border/40 hover:border-accent/40 shadow-[0_2px_8px_-3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.06)] hover:-translate-y-1 transition-all duration-500 bg-card overflow-hidden relative group">
+                  {/* Soft background blue gradient highlight on hover */}
+                  <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+                  
+                  <CardContent className="p-7 flex flex-col justify-between h-full relative z-10">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-                      <p className="text-muted-foreground text-sm mb-3">{post.description}</p>
+                      {/* Premium strategic indicator / tag */}
+                      <div className="text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded-full uppercase tracking-wider mb-4 inline-block">
+                        Insight
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-lg font-bold mb-3 text-foreground group-hover:text-accent transition-colors duration-300 line-clamp-2 leading-tight">
+                        {post.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                        {post.description}
+                      </p>
                     </div>
-                    <div className="flex items-center justify-between mt-auto">
-                      <span className="text-xs text-muted-foreground">{post.readTime} read</span>
-                      <Link to={`/blog/${post.slug}`} className="text-accent font-medium hover:underline">Read Article →</Link>
+                    
+                    {/* Footer metadata & Link */}
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
+                      <span className="text-xs text-muted-foreground/80 font-medium">{post.readTime} Read</span>
+                      <Link 
+                        to={`/blog/${post.slug}`} 
+                        className="text-sm font-semibold text-accent hover:text-accent/80 flex items-center gap-1 group/link"
+                      >
+                        Read Article 
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -758,17 +726,19 @@ A scalable e-commerce platform with seamless checkout and account creation.
         <div className="container-custom">
           <FadeInSection>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-4 text-primary-foreground">Ready to Improve Your Online Presence?</h2>
-              <p className="text-lg text-primary-foreground/80 mb-8">
-                Get a free SEO and website audit — no pressure, just actionable insights.
+              <h2 className="mb-4 text-primary-foreground text-3xl md:text-4xl font-bold tracking-tight">
+                Let’s Build a Website That Actually Supports Your Growth
+              </h2>
+              <p className="text-base sm:text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Get a free strategy audit focused on visibility, performance, and lead generation.
               </p>
               <Button 
                 size="lg" 
                 variant="secondary"
-                className="transition-shadow duration-200 hover:shadow-md"
+                className="transition-all duration-300 hover:shadow-lg bg-background text-primary hover:bg-background/90 px-8 rounded-full font-semibold"
                 asChild
               >
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">Book a Strategy Call</Link>
               </Button>
             </div>
           </FadeInSection>

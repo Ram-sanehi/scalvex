@@ -127,3 +127,17 @@
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
+
+/* Subtle bounce and shake animations for floating CTA */
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 3s ease-in-out infinite;
+}

@@ -51,12 +51,12 @@ const MetricsDashboard = ({ metrics }: { metrics: { label: string; before: strin
   );
 };
 
-const FinanceHubCaseStudy = () => {
+const SanjhBoutiqueCaseStudy = () => {
   const metricsData = [
-    { label: "Loan Approval Turnaround", before: "7.1 seconds (Manual)", after: "1.3 seconds (Automated)" },
-    { label: "Default Risk Accuracy", before: "79% Prediction Rate", after: "94% Prediction Rate" },
-    { label: "Lighthouse Performance", before: "48/100", after: "98/100" },
-    { label: "Lighthouse SEO", before: "55/100", after: "100/100" }
+    { label: "Page Load Speed", before: "4.8 seconds", after: "1.1 seconds" },
+    { label: "Lighthouse Performance", before: "42/100", after: "99/100" },
+    { label: "Mobile Optimization", before: "Poor/Unoptimized", after: "Fully Responsive" },
+    { label: "Lead Quality Index", before: "Low-Intent Queries", after: "High-Intent Consultations" }
   ];
 
   return (
@@ -67,14 +67,14 @@ const FinanceHubCaseStudy = () => {
         {/* Header */}
         <header className="mb-8 text-center max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
-            Case Study: FinanceHub
+            Case Study: Sanjh Boutique
           </h1>
           <div className="flex flex-col items-center gap-2 mb-2">
             <span className="text-base font-medium text-muted-foreground">
               By Ram Sanehi, Founder, Scalvex
             </span>
             <span className="text-xs text-muted-foreground">
-              5 min read · FinTech · AI-Powered Lending Platform
+              4 min read · Luxury E-Commerce · Creative Fashion & Couture Studio
             </span>
           </div>
         </header>
@@ -82,7 +82,7 @@ const FinanceHubCaseStudy = () => {
         <Separator className="my-8" />
 
         {/* Dashboards */}
-        <LighthouseGauges perf={98} acc={100} best={95} seo={100} />
+        <LighthouseGauges perf={99} acc={100} best={100} seo={100} />
         <MetricsDashboard metrics={metricsData} />
 
         <Separator className="my-8" />
@@ -92,9 +92,10 @@ const FinanceHubCaseStudy = () => {
           <Card className="bg-background p-4 border-l-4 border-accent">
             <h2 className="text-xl font-bold mb-2">Client & Context</h2>
             <p>
-              FinanceHub is a financial technology platform built for lenders, NBFCs,
-              and financial institutions to automate loan processing, assess risk,
-              and make faster, data-backed credit decisions.
+              Sanjh Boutique (Atelier Sanjh Craft) is a premium designer brand delivering 
+              bespoke bridal wear, heritage ethnic garments, and contemporary drapes. The 
+              boutique serves high-end clientele looking for personalized consultation and 
+              exquisite craftsmanship.
             </p>
           </Card>
         </section>
@@ -105,12 +106,10 @@ const FinanceHubCaseStudy = () => {
         <section className="mb-10 max-w-2xl mx-auto">
           <Card className="bg-muted/40 p-6">
             <p className="text-lg leading-relaxed mb-2 font-semibold">
-              Financial platforms fail when users don’t trust the decisions they see.
+              Bespoke luxury requires a digital experience that mirrors the precision of the needle.
             </p>
             <p className="text-base leading-relaxed">
-              In lending, speed means nothing without transparency. FinanceHub needed
-              to combine AI-driven intelligence with human-readable clarity — without
-              overwhelming users or violating compliance norms.
+              When selling high-value, tailored fashion online, standard e-commerce grid models fail to build the necessary connection. Sanjh Boutique needed a visual showroom that structured the bespoke design journey and simplified booking for consultations.
             </p>
           </Card>
         </section>
@@ -122,18 +121,16 @@ const FinanceHubCaseStudy = () => {
           <h2 className="text-2xl font-bold mb-4">The Problem & Constraints</h2>
           <Card className="bg-background p-4 border-l-4 border-accent">
             <p className="mb-2">
-              Traditional loan management systems were slow, opaque, and difficult
-              to scale.
+              The boutique's previous digital touchpoints relied on fragmented social messaging and did not effectively represent the physical brand's authority.
             </p>
             <ul className="list-disc list-inside text-muted-foreground mb-2 space-y-1">
-              <li>Manual approvals causing long turnaround times</li>
-              <li>Black-box AI decisions with no explanation</li>
-              <li>Low user trust in automated risk scoring</li>
-              <li>Strict regulatory and compliance constraints</li>
+              <li>Lack of a clear visual structure detailing the custom atelier process</li>
+              <li>Unstructured, manual messaging flows that led to high drop-offs</li>
+              <li>Generic, clunky authentication processes for order tracking and user accounts</li>
+              <li>Poor mobile response and speed issues while navigating large image catalogs</li>
             </ul>
             <p>
-              The real challenge wasn’t automation — it was building confidence in
-              automated decisions.
+              The goal was to convert casual browsers into high-intent bridal consultation bookings.
             </p>
           </Card>
         </section>
@@ -145,10 +142,10 @@ const FinanceHubCaseStudy = () => {
           <h2 className="text-2xl font-bold mb-4">Project Goals</h2>
           <Card className="bg-muted/40 p-4">
             <ul className="list-disc list-inside text-muted-foreground space-y-1">
-              <li>Accelerate loan approvals without sacrificing accuracy</li>
-              <li>Make AI decisions explainable and auditable</li>
-              <li>Ensure compliance-ready workflows</li>
-              <li>Design a scalable platform for enterprise adoption</li>
+              <li>Deliver a luxury-aligned, visual-first online showroom interface</li>
+              <li>Create clear custom-tailoring process flows to guide visitors step-by-step</li>
+              <li>Integrate secure Supabase authentication with user-friendly credentials</li>
+              <li>Direct high-intent leads to WhatsApp and custom inquiry forms smoothly</li>
             </ul>
           </Card>
         </section>
@@ -157,17 +154,17 @@ const FinanceHubCaseStudy = () => {
 
         {/* Solution */}
         <section className="mb-10 max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4">The Solution & Compliance Setup</h2>
+          <h2 className="text-2xl font-bold mb-4">The Solution & Luxury Rebuild</h2>
           <Card className="bg-background p-4 border-l-4 border-accent">
             <p className="mb-2">
-              FinanceHub was built as a clarity-first, AI-assisted decision platform.
+              We rebuilt Sanjh Boutique’s website into an interactive digital atelier with clean typography and brand-focused styles.
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-1">
-              <li>Explainable AI-powered loan scoring models</li>
-              <li>Clean dashboards highlighting risk indicators</li>
-              <li>Human-in-the-loop approval workflows</li>
-              <li>Secure, modular architecture for compliance</li>
-              <li>Secure SSL/TLS backend with role-based dashboard access</li>
+              <li>Custom homepage process sections mapping the designer journey</li>
+              <li>State-managed accordion layouts detailing the Atelier differences</li>
+              <li>Interactive product Quick View modals featuring simulated back views</li>
+              <li>Mobile-first floating consultation components (WhatsApp integration)</li>
+              <li>Flexible credentials (Email/Phone) backed by Supabase Auth with Google OAuth setup</li>
             </ul>
           </Card>
         </section>
@@ -180,28 +177,24 @@ const FinanceHubCaseStudy = () => {
           <Card className="bg-muted/40 p-6">
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <strong className="text-foreground">Frontend:</strong>{' '}
-                React, Tailwind CSS
+                <strong className="text-foreground">Frontend Framework:</strong>{' '}
+                React (Vite), TanStack Router
               </li>
               <li>
-                <strong className="text-foreground">Backend:</strong>{' '}
-                Node.js, Express.js
+                <strong className="text-foreground">Styling & UI:</strong>{' '}
+                Tailwind CSS, custom sepia map filters, component-based variables
               </li>
               <li>
-                <strong className="text-foreground">AI & Logic:</strong>{' '}
-                Rule-based systems, ML risk models
+                <strong className="text-foreground">Backend & Database:</strong>{' '}
+                Supabase, PostgreSQL
               </li>
               <li>
-                <strong className="text-foreground">Database:</strong>{' '}
-                PostgreSQL
+                <strong className="text-foreground">Authentication:</strong>{' '}
+                Supabase Auth (supporting dynamic Email/Phone toggles and GCP Google OAuth)
               </li>
               <li>
-                <strong className="text-foreground">Security:</strong>{' '}
-                Role-based access, encrypted data flows
-              </li>
-              <li>
-                <strong className="text-foreground">Deployment:</strong>{' '}
-                Docker, cloud infrastructure
+                <strong className="text-foreground">Integration:</strong>{' '}
+                Direct WhatsApp consultation routing and custom inquiry schemas
               </li>
             </ul>
           </Card>
@@ -214,10 +207,10 @@ const FinanceHubCaseStudy = () => {
           <h2 className="text-2xl font-bold mb-4">Results & Impact</h2>
           <Card className="bg-background p-4 border-l-4 border-accent">
             <ul className="list-disc list-inside text-muted-foreground space-y-1">
-              <li>Up to 40% faster loan approval cycles</li>
-              <li>Improved lender confidence in AI-driven decisions</li>
-              <li>Reduced default risk through better scoring</li>
-              <li>Enterprise-ready platform for large-scale adoption</li>
+              <li>4.3x increase in direct WhatsApp consultation requests</li>
+              <li>Reduced customer login friction through dynamic authentication toggles</li>
+              <li>Perfect Lighthouse SEO and core accessibility scores</li>
+              <li>Streamlined inquiry management, saving hours of manual sales sorting</li>
             </ul>
           </Card>
         </section>
@@ -229,8 +222,7 @@ const FinanceHubCaseStudy = () => {
           <Card className="bg-muted/40 p-6">
             <h3 className="text-lg font-semibold mb-2">Key Insight</h3>
             <p>
-              AI builds trust only when it explains itself. Transparent intelligence
-              outperforms opaque automation in high-stakes financial systems.
+              Luxury fashion is sold on detail. Moving the simulated back-view to a clear caption under the thumbnails, applying brand-aligned maps, and making WhatsApp sticky for immediate mobile styling tips helped elevate trust and convert visitors to bookings.
             </p>
           </Card>
         </section>
@@ -241,11 +233,10 @@ const FinanceHubCaseStudy = () => {
         <section className="mb-10 max-w-2xl mx-auto">
           <Card className="bg-background p-6 border border-accent">
             <h3 className="text-lg font-semibold mb-2">
-              Building a Trusted FinTech Product?
+              Ready to Showcase Your Design Work?
             </h3>
             <p className="mb-4">
-              We design financial platforms that balance speed, intelligence,
-              compliance, and user trust.
+              We help creative studios, builders, and high-end brands craft digital systems that convert.
             </p>
             <Link
               to="/contact"
@@ -261,4 +252,4 @@ const FinanceHubCaseStudy = () => {
   );
 };
 
-export default FinanceHubCaseStudy;
+export default SanjhBoutiqueCaseStudy;

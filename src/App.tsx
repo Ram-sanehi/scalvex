@@ -18,6 +18,7 @@ import AgrifreshCaseStudy from "./pages/AgrifreshCaseStudy";
 import FinanceHubCaseStudy from "./pages/FinanceHubCaseStudy";
 import ArchlyCaseStudy from "./pages/ArchlyCaseStudy";
 import NilkamalInteriorsCaseStudy from "./pages/NilkamalInteriorsCaseStudy";
+import SanjhBoutiqueCaseStudy from "./pages/SanjhBoutiqueCaseStudy";
 import NotFound from "./pages/NotFound";
 import BlogIndex from "./pages/blog/index";
 import SeoFirstLeads from "./pages/blog/seo-first-leads";
@@ -26,6 +27,11 @@ import FixConversion from "./pages/blog/fix-conversion";
 import SeoContentStrategy from "./pages/blog/seo-content-strategy";
 import LocalSeoGuide from "./pages/blog/local-seo-guide";
 import FastSiteBenefits from "./pages/blog/fast-site-benefits";
+
+import CoimbatoreWebDev from "./pages/CoimbatoreWebDev";
+import SeoServiceBusinesses from "./pages/SeoServiceBusinesses";
+import StartupWebDesign from "./pages/StartupWebDesign";
+import SeoArchitectsClinics from "./pages/SeoArchitectsClinics";
 
 const queryClient = new QueryClient();
 
@@ -53,10 +59,16 @@ const App = () => (
           <Route path="blog/local-seo-guide" element={<LocalSeoGuide />} />
           <Route path="blog/fast-site-benefits" element={<FastSiteBenefits />} />
           <Route path="/alphainvestmentcasestudy" element={<AlphaInvestmentCaseStudy />} />
+          <Route path="/sanjhboutiquecasestudy" element={<SanjhBoutiqueCaseStudy />} />
           <Route path="/agrifreshcasestudy" element={<AgrifreshCaseStudy />} />
           <Route path="/financehubcasestudy" element={<FinanceHubCaseStudy />} />
           <Route path="/archlycasestudy" element={<ArchlyCaseStudy />} />
           <Route path="/nilkamalinteriorscasestudy" element={<NilkamalInteriorsCaseStudy />} />
+          
+          <Route path="/coimbatore-web-development" element={<CoimbatoreWebDev />} />
+          <Route path="/seo-service-businesses" element={<SeoServiceBusinesses />} />
+          <Route path="/startup-website-design" element={<StartupWebDesign />} />
+          <Route path="/seo-architects-clinics" element={<SeoArchitectsClinics />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -7,26 +7,49 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground text-sm">
-      <div className="container-custom py-3 md:py-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="container-custom py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-bold mb-2 text-primary-foreground">Scalvex</h3>
-            <p className="text-primary-foreground/80 max-w-md text-sm mb-2">
-              SEO-driven websites for service businesses that want consistent leads.
-              Built with performance and visibility from day one.
+            <h3 className="text-xl font-bold mb-4 text-primary-foreground tracking-tight">Scalvex</h3>
+            <p className="text-primary-foreground/70 max-w-sm text-sm leading-relaxed mb-5">
+              Scalvex builds modern websites designed to improve visibility, strengthen credibility, and help service businesses grow online.
             </p>
-            <p className="text-primary-foreground/80 text-sm">
-              Email: <a href="mailto:ram@scalvex.in" className="underline hover:text-accent">ram@scalvex.in</a>
+            <p className="text-primary-foreground/75 text-xs">
+              Direct inquiries: <a href="mailto:ram@scalvex.in" className="underline hover:text-accent transition-colors duration-200">ram@scalvex.in</a>
             </p>
+          </div>
+
+          {/* Solutions / What We Do */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider mb-4 text-primary-foreground">
+              What We Do
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { name: 'Growth Websites', path: '/coimbatore-web-development' },
+                { name: 'Website Optimization', path: '/seo-service-businesses' },
+                { name: 'Visibility & SEO', path: '/startup-website-design' },
+                { name: 'Performance Improvements', path: '/seo-architects-clinics' },
+              ].map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-primary-foreground/70 hover:text-accent transition-colors duration-200 text-xs"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider mb-2 text-primary-foreground">
+            <h4 className="text-xs font-semibold uppercase tracking-wider mb-4 text-primary-foreground">
               Quick Links
             </h4>
-            <ul className="space-y-1">
+            <ul className="space-y-3">
               {[
                 { name: 'Home', path: '/' },
                 { name: 'Services', path: '/services' },
@@ -39,7 +62,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors duration-200 text-xs"
                   >
                     {link.name}
                   </Link>
@@ -50,14 +73,14 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider mb-2 text-primary-foreground">
+            <h4 className="text-xs font-semibold uppercase tracking-wider mb-4 text-primary-foreground">
               Legal
             </h4>
-            <ul className="space-y-1">
+            <ul className="space-y-3">
               <li>
                 <Link
                   to="/privacy"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors duration-200 text-xs"
                 >
                   Privacy Policy
                 </Link>
@@ -65,7 +88,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/terms"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-primary-foreground/70 hover:text-accent transition-colors duration-200 text-xs"
                 >
                   Terms of Service
                 </Link>
@@ -75,9 +98,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-4 pt-4 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-            <p className="text-primary-foreground/80 text-xs text-center md:text-left">
+        <div className="mt-12 pt-6 border-t border-primary-foreground/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-primary-foreground/60 text-xs text-center md:text-left">
               © {currentYear} Scalvex. All rights reserved.
             </p>
 

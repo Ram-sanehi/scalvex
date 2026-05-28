@@ -3,141 +3,137 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Layout from '@/components/Layout';
 import FadeInSection from '@/components/FadeInSection';
-import { 
-  Code, 
-  BarChart3, 
-  Globe, 
-  Zap, 
-  Layout as LayoutIcon, 
-  Search,
-  FileText,
-  TrendingUp,
-  Settings,
-  Rocket
-} from 'lucide-react';
+import { Check, Shield, Search, TrendingUp, Sparkles, ArrowRight } from 'lucide-react';
 
 const Services = () => {
-  const webDevServices = [
-        {
-          icon: LayoutIcon,
-          title: 'Conversion-Focused UX & UI',
-          desc: 'Strategic layouts, clear user flows, and design decisions backed by conversion best practices.',
-          benefit: 'Visitors take action more easily — more inquiries, signups, and revenue without increasing traffic.'
-        },
-    { 
-      icon: Globe, 
-      title: 'Business Websites', 
-      desc: 'Professional websites that establish credibility and convert visitors into customers.',
-      benefit: 'Build trust with potential clients and generate consistent inbound leads.'
+  const servicePillars = [
+    {
+      title: 'Growth Website Systems',
+      subtitle: 'Complete digital platforms engineered for conversion & visibility',
+      icon: Sparkles,
+      desc: 'We build custom, high-performance websites where SEO design and conversion psychology are integrated from the very first line of code.',
+      features: [
+        { title: 'SEO-First Websites', desc: 'Built with clean semantic markup and structured microdata schemas for seamless search crawling.' },
+        { title: 'Conversion-Focused Layouts', desc: 'Sleek, high-converting interfaces optimized to turn passive readers into qualified client inquiries.' },
+        { title: 'Business Credibility', desc: 'Premium custom design and typography that immediately establishes industry leadership.' },
+        { title: 'Responsive Design', desc: 'Fast, fluid layouts optimized for flawless mobile, tablet, and desktop viewing.' },
+        { title: 'Scalable Architecture', desc: 'Clean, modular React-based frameworks ready for integrations, databases, and customer dashboards.' }
+      ]
     },
-    { 
-      icon: Rocket, 
-      title: 'Startup & MVP Builds', 
-      desc: 'Fast, lean development for startups looking to validate ideas and launch quickly.',
-      benefit: 'Get to market faster with a polished product that attracts early customers and investors.'
+    {
+      title: 'Website Optimization & Growth',
+      subtitle: 'Audit, tune, and expand your existing platform performance',
+      icon: Search,
+      desc: 'We audit and re-engineer existing web assets to plug conversion leaks, optimize user experiences, and maximize search rankings.',
+      features: [
+        { title: 'SEO Improvements', desc: 'Rigorous keyword intent mapping, metadata tuning, and deep technical site crawling.' },
+        { title: 'Content Structure Optimization', desc: 'Structuring your services and pages so Google understands your relevance and authority.' },
+        { title: 'Speed Optimization', desc: 'Comprehensive assets optimization to meet Google’s strict Core Web Vitals standard.' },
+        { title: 'Conversion Optimization', desc: 'A/B testing, CTA optimization, and form design refinement to increase conversion rates.' },
+        { title: 'UX Improvements', desc: 'Reducing interface friction to make navigation simple and intuitive on all devices.' },
+        { title: 'Technical Performance', desc: 'Resolving indexation issues, resolving broken routes, and deploying CDN caching.' }
+      ]
     },
-    { 
-      icon: LayoutIcon, 
-      title: 'Landing Pages', 
-      desc: 'High-converting landing pages optimized for campaigns and lead generation.',
-      benefit: 'Maximize ROI on your marketing spend with pages designed to convert.'
-    },
-    { 
-      icon: Zap, 
-      title: 'Performance Optimization', 
-      desc: 'Speed improvements and technical enhancements for existing websites.',
-      benefit: 'Faster load times mean better user experience, higher rankings, and more conversions.'
-    },
-    { 
-      icon: Code, 
-      title: 'SEO-Ready Architecture', 
-      desc: 'Every build includes proper HTML structure, meta tags, and semantic markup.',
-      benefit: 'Start ranking from day one with a foundation built for organic growth.'
-    },
-  ];
-
-  const seoServices = [
-    { 
-      icon: Settings, 
-      title: 'Technical SEO Setup', 
-      desc: 'Site speed, mobile optimization, crawlability, and indexing improvements.',
-      benefit: 'Remove technical barriers that prevent search engines from ranking your site.'
-    },
-    { 
-      icon: Search, 
-      title: 'On-Page SEO', 
-      desc: 'Title tags, meta descriptions, header structure, and internal linking.',
-      benefit: 'Optimize every page to rank for the keywords your customers are searching.'
-    },
-    { 
-      icon: FileText, 
-      title: 'Content Optimization', 
-      desc: 'Keyword research and content strategy aligned with search intent.',
-      benefit: 'Create content that attracts, engages, and converts your target audience.'
-    },
-    { 
-      icon: TrendingUp, 
-      title: 'Analytics & Reporting', 
-      desc: 'Performance tracking, insights, and monthly progress reports.',
-      benefit: "Understand what's working and make data-driven decisions for growth."
-    },
+    {
+      title: 'Visibility & Performance',
+      subtitle: 'Drive consistent high-intent traffic to your booking pages',
+      icon: TrendingUp,
+      desc: 'We deploy search programs that align your brand with buyer intent, putting your service catalog in front of ready-to-buy local and global clients.',
+      features: [
+        { title: 'Local SEO Foundation', desc: 'Targeting geo-specific keywords to dominate search results in your local target regions.' },
+        { title: 'Google Business Optimization', desc: 'Enhancing Map Pack visibility and reputation signals to stand out from local competitors.' },
+        { title: 'Analytics Integration', desc: 'Custom GA4 dashboards, tracking pixels, and form conversion attribution.' },
+        { title: 'Search Visibility Improvements', desc: 'Tracking core search rankings, click-through-rates, and search snippets.' },
+        { title: 'Performance Tracking', desc: 'Transparent, monthly progress metrics reporting on real business outcomes like inquiries.' }
+      ]
+    }
   ];
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="mb-6">Services Built for Growth</h1>
-              <p className="text-lg md:text-xl text-muted-foreground">
-                Web development with SEO built in. We create websites that not only look great 
-                but are engineered to perform in search and convert visitors into leads.
-              </p>
-              <div className="mt-6 text-base text-muted-foreground">
-                <span className="block mb-1">We take on a limited number of projects to maintain quality.</span>
-                <span className="block mb-1">We don’t offer templates, rushed builds, or SEO as an afterthought.</span>
-                <span className="block mb-1">Projects are handled directly by the founder with clear milestones.</span>
-                <span className="block mb-1">Pricing reflects scope, complexity, and long-term value.</span>
-              </div>
-            </div>
-          </FadeInSection>
+      {/* Hero Section */}
+      <section className="relative py-20 md:py-28 bg-background overflow-hidden border-b border-border/50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,175,218,0.06),rgba(255,255,255,0))]" />
+        
+        <div className="container-custom relative z-10 text-center max-w-3xl mx-auto flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 bg-accent/5 border border-accent/20 rounded-full px-4 py-1.5 mb-6 text-xs sm:text-sm text-accent font-medium">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span>Integrated Web Growth Systems</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            Integrated Website Systems Built for <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Digital Growth</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+            We don't sell websites and SEO as separate, disjointed services. We design and build integrated growth systems where speed, structure, visibility, and conversion work together.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+            <Button size="lg" asChild className="group shadow-lg shadow-accent/15 bg-accent text-accent-foreground hover:bg-accent/90 px-8 rounded-full font-semibold transition-all duration-300">
+              <Link to="/contact" className="flex items-center gap-2">
+                Book a Free Strategy Call <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="rounded-full px-8 transition-all duration-300">
+              <Link to="/work">View Our Growth Case Studies</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Web Development */}
+      {/* Services Pillars */}
       <section className="section-padding bg-card">
         <div className="container-custom">
-          <FadeInSection>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Code className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h2 className="mb-1">Web Development</h2>
-                <p className="text-muted-foreground">Custom websites built for performance, SEO, and conversion</p>
-              </div>
-            </div>
-          </FadeInSection>
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Our Three-Pillar Growth System</h2>
+            <p className="text-muted-foreground text-sm md:text-base">
+              Every package is custom tailored around these core execution frameworks to guarantee business results.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {webDevServices.map((service, index) => (
-              <FadeInSection key={index} delay={index * 80}>
-                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
-                  <CardContent className="p-6">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <service.icon className="h-5 w-5 text-primary" />
+          <div className="space-y-16 max-w-5xl mx-auto">
+            {servicePillars.map((pillar, idx) => (
+              <FadeInSection key={idx} delay={idx * 100}>
+                <Card className="border border-border/40 hover:border-accent/40 bg-background shadow-[0_2px_8px_-3px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(59,175,218,0.06)] hover:-translate-y-1 transition-all duration-500 overflow-hidden relative group">
+                  {/* Soft background blue gradient highlight on hover */}
+                  <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
+                  
+                  <div className="p-8 md:p-10 relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-start gap-6 mb-8">
+                      <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 transition-all duration-500 group-hover:scale-105 group-hover:bg-accent/20 group-hover:border-accent/35">
+                        <pillar.icon className="h-6 w-6 text-accent transition-transform duration-500 group-hover:rotate-6" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">{pillar.title}</h3>
+                        <p className="text-xs font-semibold text-accent uppercase tracking-wider">{pillar.subtitle}</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed mt-2">{pillar.desc}</p>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{service.desc}</p>
-                    <div className="pt-4 border-t border-border">
-                      <p className="text-sm">
-                        <span className="font-medium text-primary">What this means for you: </span>
-                        <span className="text-muted-foreground">{service.benefit}</span>
-                      </p>
+
+                    <div className="border-t border-border/40 pt-8 mt-4">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-6 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                        System Specifications
+                      </h4>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        {pillar.features.map((feature, fIdx) => (
+                          <div 
+                            key={fIdx} 
+                            className="flex items-start gap-3 p-4 rounded-xl border border-border/30 bg-muted/20 hover:border-accent/30 hover:bg-accent/[0.01] transition-all duration-300 group/item"
+                          >
+                            <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-accent/20 transition-all duration-300">
+                              <Check className="h-3.5 w-3.5 text-accent" />
+                            </div>
+                            <div>
+                              <h5 className="font-semibold text-sm text-foreground mb-1 group-hover/item:text-accent transition-colors duration-300">{feature.title}</h5>
+                              <p className="text-xs text-muted-foreground/90 leading-relaxed">{feature.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </CardContent>
+                  </div>
                 </Card>
               </FadeInSection>
             ))}
@@ -145,59 +141,77 @@ const Services = () => {
         </div>
       </section>
 
-      {/* SEO Services */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <FadeInSection>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                <BarChart3 className="h-6 w-6 text-accent" />
-              </div>
-              <div>
-                <h2 className="mb-1">SEO Add-On Services</h2>
-                <p className="text-muted-foreground">Maximize your visibility and drive organic traffic</p>
-              </div>
+      {/* Philosophy Statement */}
+      <section className="section-padding bg-background border-t border-border/50 relative overflow-hidden">
+        {/* Subtle decorative background gradient highlight */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_50%_50%_at_50%_0%,rgba(59,175,218,0.04),transparent)] pointer-events-none" />
+        
+        <div className="container-custom max-w-4xl mx-auto text-center relative z-10">
+          <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center mx-auto mb-6">
+            <Shield className="h-6 w-6 text-accent" />
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">A Zero-Compromise Approach to Performance</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-10">
+            We limit our capacity to a select number of clients at any given time. We do not use generic WordPress page builders, bloated themes, or cheap offshore white-label services. You collaborate directly with our founder to design a high-performance digital system that delivers real growth.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left max-w-4xl mx-auto">
+            <div className="p-5 border border-border/40 hover:border-accent/40 rounded-xl bg-card shadow-[0_2px_8px_-3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.05)] hover:-translate-y-0.5 transition-all duration-300 relative group overflow-hidden">
+              <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
+              <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-2">Direct Line</span>
+              <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-300">Founder-Led Collaboration</span>
             </div>
-          </FadeInSection>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {seoServices.map((service, index) => (
-              <FadeInSection key={index} delay={index * 80}>
-                <Card className="h-full transition-shadow duration-200 hover:shadow-md">
-                  <CardContent className="p-6">
-                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                      <service.icon className="h-5 w-5 text-accent" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{service.desc}</p>
-                    <div className="pt-4 border-t border-border">
-                      <p className="text-sm">
-                        <span className="font-medium text-accent">What this means for you: </span>
-                        <span className="text-muted-foreground">{service.benefit}</span>
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </FadeInSection>
-            ))}
+            
+            <div className="p-5 border border-border/40 hover:border-accent/40 rounded-xl bg-card shadow-[0_2px_8px_-3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.05)] hover:-translate-y-0.5 transition-all duration-300 relative group overflow-hidden">
+              <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
+              <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-2">Zero Bloat</span>
+              <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-300">React/Next.js Architecture</span>
+            </div>
+            
+            <div className="p-5 border border-border/40 hover:border-accent/40 rounded-xl bg-card shadow-[0_2px_8px_-3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.05)] hover:-translate-y-0.5 transition-all duration-300 relative group overflow-hidden">
+              <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
+              <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-2">Visibility</span>
+              <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-300">SEO Built In from Day One</span>
+            </div>
+            
+            <div className="p-5 border border-border/40 hover:border-accent/40 rounded-xl bg-card shadow-[0_2px_8px_-3px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(59,175,218,0.05)] hover:-translate-y-0.5 transition-all duration-300 relative group overflow-hidden">
+              <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
+              <span className="text-[10px] font-bold text-accent uppercase tracking-wider block mb-2">Integrity</span>
+              <span className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-300">Measurable Growth Focus</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom">
-          <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-4 text-primary-foreground">Ready to Get Started?</h2>
-              <p className="text-lg text-primary-foreground/80 mb-8">
-                Get a free SEO and website audit — no pressure, just actionable insights.
-              </p>
-              <Button size="lg" variant="secondary" asChild>
-                <Link to="/contact">Request a Free Consultation</Link>
+      {/* CTA Section */}
+      <section className="section-padding bg-primary text-primary-foreground text-center relative overflow-hidden">
+        {/* Decorative background grid pattern or soft light */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,175,218,0.15),transparent)] pointer-events-none" />
+        
+        <div className="container-custom max-w-4xl mx-auto relative z-10">
+          <div className="p-8 md:p-12 border border-primary-foreground/10 rounded-2xl bg-primary-foreground/[0.02] backdrop-blur-sm max-w-3xl mx-auto space-y-6 shadow-2xl">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Looking to Improve Visibility, Performance & Leads?</h2>
+            <p className="text-primary-foreground/75 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+              Book a strategy call to discuss how your website can improve visibility, trust, and customer inquiries.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                asChild 
+                className="transition-all duration-300 hover:shadow-lg bg-background text-primary hover:bg-background/90 px-8 rounded-full font-semibold"
+              >
+                <Link to="/contact">Book a Strategy Call</Link>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                asChild 
+                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground px-8 rounded-full font-semibold transition-all duration-300"
+              >
+                <Link to="/contact?tab=message">Get a Free Website Audit</Link>
               </Button>
             </div>
-          </FadeInSection>
+          </div>
         </div>
       </section>
     </Layout>
