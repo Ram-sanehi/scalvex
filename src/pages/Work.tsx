@@ -219,19 +219,44 @@ const Work = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom">
+      <section className="section-padding bg-background relative overflow-hidden">
+        {/* Background ambient glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,175,218,0.03),transparent_70%)] pointer-events-none" />
+        
+        <div className="container-custom relative z-10">
           <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-4 text-primary-foreground">
-                Have a Project in Mind?
-              </h2>
-              <p className="text-lg text-primary-foreground/80 mb-8">
-                Let's discuss how we can help bring your vision to life with a website built for growth.
-              </p>
-              <Button size="lg" variant="secondary" asChild>
-                <Link to="/contact">Start a Conversation</Link>
-              </Button>
+            <div className="relative overflow-hidden rounded-[2rem] bg-primary border border-white/10 px-6 py-16 md:px-16 md:py-24 shadow-[0_20px_50px_rgba(15,42,68,0.15)] max-w-[46rem] mx-auto">
+              {/* Radial card lighting */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
+              
+              <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+                {/* Visual badge indicator */}
+                <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 mb-8 text-xs text-accent font-semibold tracking-widest uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span>Start Growing</span>
+                </div>
+                
+                {/* Headline */}
+                <h2 className="mb-6 text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                  Have a Project in Mind?
+                </h2>
+                
+                {/* Subheadline */}
+                <p className="text-base sm:text-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
+                  Let's discuss how we can help bring your vision to life with a website built for growth.
+                </p>
+                
+                {/* Button */}
+                <div className="flex justify-center w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto text-sm px-8 py-5 h-auto bg-white text-primary hover:bg-white/90 font-bold rounded-full transition-all duration-300 hover:shadow-lg shadow-black/10 hover:translate-y-[-1px]"
+                    asChild
+                  >
+                    <Link to="/contact">Start a Conversation</Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </FadeInSection>
         </div>

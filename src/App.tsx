@@ -28,10 +28,10 @@ import SeoContentStrategy from "./pages/blog/seo-content-strategy";
 import LocalSeoGuide from "./pages/blog/local-seo-guide";
 import FastSiteBenefits from "./pages/blog/fast-site-benefits";
 
-import CoimbatoreWebDev from "./pages/CoimbatoreWebDev";
-import SeoServiceBusinesses from "./pages/SeoServiceBusinesses";
-import StartupWebDesign from "./pages/StartupWebDesign";
-import SeoArchitectsClinics from "./pages/SeoArchitectsClinics";
+import GrowthWebsites from "./pages/GrowthWebsites";
+import WebsiteOptimization from "./pages/WebsiteOptimization";
+import VisibilitySeo from "./pages/VisibilitySeo";
+import PerformanceImprovements from "./pages/PerformanceImprovements";
 
 const queryClient = new QueryClient();
 
@@ -65,10 +65,17 @@ const App = () => (
           <Route path="/archlycasestudy" element={<ArchlyCaseStudy />} />
           <Route path="/nilkamalinteriorscasestudy" element={<NilkamalInteriorsCaseStudy />} />
           
-          <Route path="/coimbatore-web-development" element={<CoimbatoreWebDev />} />
-          <Route path="/seo-service-businesses" element={<SeoServiceBusinesses />} />
-          <Route path="/startup-website-design" element={<StartupWebDesign />} />
-          <Route path="/seo-architects-clinics" element={<SeoArchitectsClinics />} />
+          {/* New Clean Premium Routes */}
+          <Route path="/growth-websites" element={<GrowthWebsites />} />
+          <Route path="/website-optimization" element={<WebsiteOptimization />} />
+          <Route path="/visibility-seo" element={<VisibilitySeo />} />
+          <Route path="/performance-improvements" element={<PerformanceImprovements />} />
+          
+          {/* Legacy SEO URL Aliases */}
+          <Route path="/coimbatore-web-development" element={<GrowthWebsites />} />
+          <Route path="/seo-service-businesses" element={<WebsiteOptimization />} />
+          <Route path="/startup-website-design" element={<VisibilitySeo />} />
+          <Route path="/seo-architects-clinics" element={<PerformanceImprovements />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

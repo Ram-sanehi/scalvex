@@ -259,7 +259,7 @@ const processSteps = [
                     Book a Free Strategy Call <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 py-6 h-auto hover:bg-muted hover:translate-y-[-2px] transition-transform duration-200" asChild>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8 py-6 h-auto hover:translate-y-[-2px] transition-transform duration-200" asChild>
                   <Link to="/work">View Case Studies</Link>
                 </Button>
               </div>
@@ -722,24 +722,52 @@ const processSteps = [
       </section>
 
       {/* Final CTA */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom">
+      <section className="section-padding bg-background relative overflow-hidden">
+        {/* Background ambient glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,175,218,0.03),transparent_70%)] pointer-events-none" />
+        
+        <div className="container-custom relative z-10">
           <FadeInSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-4 text-primary-foreground text-3xl md:text-4xl font-bold tracking-tight">
-                Let’s Build a Website That Actually Supports Your Growth
-              </h2>
-              <p className="text-base sm:text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Get a free strategy audit focused on visibility, performance, and lead generation.
-              </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="transition-all duration-300 hover:shadow-lg bg-background text-primary hover:bg-background/90 px-8 rounded-full font-semibold"
-                asChild
-              >
-                <Link to="/contact">Book a Strategy Call</Link>
-              </Button>
+            <div className="relative overflow-hidden rounded-[2rem] bg-primary border border-white/10 px-6 py-16 md:px-16 md:py-24 shadow-[0_20px_50px_rgba(15,42,68,0.15)] max-w-[46rem] mx-auto">
+              {/* Radial card lighting */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
+              
+              <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+                {/* Visual badge indicator */}
+                <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 mb-8 text-xs text-accent font-semibold tracking-widest uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span>Start Growing</span>
+                </div>
+                
+                {/* Headline */}
+                <h2 className="mb-6 text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                  Your Next Customer Is Already Searching.
+                </h2>
+                
+                {/* Subheadline */}
+                <p className="text-base sm:text-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
+                  Build a stronger digital presence with a website designed to improve visibility, strengthen credibility, and generate qualified inquiries.
+                </p>
+                
+                {/* Buttons with visual hierarchy */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto text-sm px-8 py-5 h-auto bg-white text-primary hover:bg-white/90 font-bold rounded-full transition-all duration-300 hover:shadow-lg shadow-black/10 hover:translate-y-[-1px]"
+                    asChild
+                  >
+                    <Link to="/contact">Book a Strategy Call</Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="w-full sm:w-auto text-sm px-8 py-5 h-auto bg-transparent border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 font-bold rounded-full transition-all duration-300 hover:translate-y-[-1px]"
+                    asChild
+                  >
+                    <Link to="/work">See Our Work</Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </FadeInSection>
         </div>

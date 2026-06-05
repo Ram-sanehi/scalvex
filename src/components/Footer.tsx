@@ -27,10 +27,10 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: 'Growth Websites', path: '/coimbatore-web-development' },
-                { name: 'Website Optimization', path: '/seo-service-businesses' },
-                { name: 'Visibility & SEO', path: '/startup-website-design' },
-                { name: 'Performance Improvements', path: '/seo-architects-clinics' },
+                { name: 'Growth Websites', path: '/growth-websites' },
+                { name: 'Website Optimization', path: '/website-optimization' },
+                { name: 'Visibility & SEO', path: '/visibility-seo' },
+                { name: 'Performance Improvements', path: '/performance-improvements' },
               ].map((link) => (
                 <li key={link.path}>
                   <Link
@@ -90,7 +90,7 @@ const Footer = () => {
                   to="/terms"
                   className="text-primary-foreground/70 hover:text-accent transition-colors duration-200 text-xs"
                 >
-                  Terms of Service
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>

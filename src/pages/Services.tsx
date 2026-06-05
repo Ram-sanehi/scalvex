@@ -183,35 +183,54 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary text-primary-foreground text-center relative overflow-hidden">
-        {/* Decorative background grid pattern or soft light */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,175,218,0.15),transparent)] pointer-events-none" />
+      <section className="section-padding bg-background relative overflow-hidden">
+        {/* Background ambient glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,175,218,0.03),transparent_70%)] pointer-events-none" />
         
-        <div className="container-custom max-w-4xl mx-auto relative z-10">
-          <div className="p-8 md:p-12 border border-primary-foreground/10 rounded-2xl bg-primary-foreground/[0.02] backdrop-blur-sm max-w-3xl mx-auto space-y-6 shadow-2xl">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Looking to Improve Visibility, Performance & Leads?</h2>
-            <p className="text-primary-foreground/75 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
-              Book a strategy call to discuss how your website can improve visibility, trust, and customer inquiries.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                asChild 
-                className="transition-all duration-300 hover:shadow-lg bg-background text-primary hover:bg-background/90 px-8 rounded-full font-semibold"
-              >
-                <Link to="/contact">Book a Strategy Call</Link>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                asChild 
-                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground px-8 rounded-full font-semibold transition-all duration-300"
-              >
-                <Link to="/contact?tab=message">Get a Free Website Audit</Link>
-              </Button>
+        <div className="container-custom relative z-10">
+          <FadeInSection>
+            <div className="relative overflow-hidden rounded-[2rem] bg-primary border border-white/10 px-6 py-16 md:px-16 md:py-24 shadow-[0_20px_50px_rgba(15,42,68,0.15)] max-w-[46rem] mx-auto">
+              {/* Radial card lighting */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
+              
+              <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
+                {/* Visual badge indicator */}
+                <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 mb-8 text-xs text-accent font-semibold tracking-widest uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span>Start Growing</span>
+                </div>
+                
+                {/* Headline */}
+                <h2 className="mb-6 text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight animate-fade-in-up">
+                  Looking to Improve Visibility, Performance & Leads?
+                </h2>
+                
+                {/* Subheadline */}
+                <p className="text-base sm:text-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
+                  Book a strategy call to discuss how your website can improve visibility, trust, and customer inquiries.
+                </p>
+                
+                {/* Buttons with visual hierarchy */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto text-sm px-8 py-5 h-auto bg-white text-primary hover:bg-white/90 font-bold rounded-full transition-all duration-300 hover:shadow-lg shadow-black/10 hover:translate-y-[-1px]"
+                    asChild
+                  >
+                    <Link to="/contact">Book a Strategy Call</Link>
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="w-full sm:w-auto text-sm px-8 py-5 h-auto bg-transparent border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 font-bold rounded-full transition-all duration-300 hover:translate-y-[-1px]"
+                    asChild
+                  >
+                    <Link to="/contact?tab=message">Get a Free Website Audit</Link>
+                  </Button>
+                </div>
+              </div>
             </div>
-          </div>
+          </FadeInSection>
         </div>
       </section>
     </Layout>
