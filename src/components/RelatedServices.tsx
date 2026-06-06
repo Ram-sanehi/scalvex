@@ -67,16 +67,16 @@ export const RelatedServices = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {filteredServices.map((service) => {
             const Icon = service.icon;
             return (
               <Link to={service.path} key={service.path} className="group">
                 <Card className="h-full border border-border/40 hover:border-accent/40 shadow-sm hover:shadow-[0_8px_30px_rgba(59,175,218,0.04)] hover:-translate-y-1 transition-all duration-500 bg-card overflow-hidden relative">
                   <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <CardContent className="p-7 flex flex-col justify-between h-full relative z-10">
+                  <CardContent className="p-5 flex flex-col justify-between h-full relative z-10">
                     <div>
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-5 border ${service.color} transition-transform duration-500 group-hover:scale-105`}>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 border ${service.color} transition-transform duration-500 group-hover:scale-105`}>
                         <Icon className="h-5 w-5" />
                       </div>
                       <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
@@ -86,7 +86,7 @@ export const RelatedServices = () => {
                         {service.desc}
                       </p>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-accent mt-8 group-hover:underline">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-accent mt-5 group-hover:underline">
                       Explore Service <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardContent>

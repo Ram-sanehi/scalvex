@@ -189,24 +189,24 @@ const About = () => {
         
         <div className="container-custom relative z-10">
           <FadeInSection>
-            <div className="relative overflow-hidden rounded-[2rem] bg-primary border border-white/10 px-6 py-16 md:px-16 md:py-24 shadow-[0_20px_50px_rgba(15,42,68,0.15)] max-w-[46rem] mx-auto">
+            <div className="relative overflow-hidden rounded-[2rem] bg-primary border border-white/10 px-6 py-12 md:px-12 md:py-16 shadow-[0_20px_50px_rgba(15,42,68,0.15)] max-w-[42rem] mx-auto">
               {/* Radial card lighting */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
               
               <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center">
                 {/* Visual badge indicator */}
-                <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 mb-8 text-xs text-accent font-semibold tracking-widest uppercase">
+                <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4.5 py-1.5 mb-5 text-xs text-accent font-semibold tracking-widest uppercase">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                   <span>Start Growing</span>
                 </div>
                 
                 {/* Headline */}
-                <h2 className="mb-6 text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                <h2 className="mb-4 text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
                   Looking for a Website Built Around Long-Term Growth?
                 </h2>
                 
                 {/* Subheadline */}
-                <p className="text-base sm:text-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
+                <p className="text-base sm:text-lg text-white/80 mb-6 max-w-xl mx-auto leading-relaxed">
                   Book a strategy call to discuss how we can help your business improve visibility, trust, and customer inquiries.
                 </p>
                 
