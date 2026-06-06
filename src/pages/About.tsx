@@ -90,8 +90,11 @@ const About = () => {
                   <div className="relative group max-w-[380px] w-full aspect-[4/5] rounded-2xl overflow-hidden border border-border/50 hover:border-accent/40 shadow-[0_2px_8px_-3px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(59,175,218,0.06)] bg-card flex items-center justify-center transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute -inset-px bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
                     <img
-                      src="/founder.jpg"
+                      src="/founder.webp"
                       alt="Ram Vishwakarma, Founder"
+                      width="380"
+                      height="475"
+                      loading="lazy"
                       className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';

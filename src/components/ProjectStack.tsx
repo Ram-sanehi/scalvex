@@ -45,8 +45,10 @@ const ProjectStack: React.FC<ProjectStackProps> = ({ projects }) => {
               style={{ aspectRatio: '16/7', minHeight: isMobile ? 180 : 260, maxHeight: isMobile ? 200 : 320, position: 'relative' }}
             >
               <img
-                src={project.image || '/aim.png'}
+                src={project.image || '/aim.webp'}
                 alt={`${project.title} website screenshot`}
+                width="800"
+                height="350"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-[1.03]"
                 style={{ objectPosition: 'top center', display: 'block' }}
                 loading="lazy"

@@ -71,7 +71,7 @@ const Contact = () => {
                   <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-accent/[0.03] to-transparent pointer-events-none" />
                   
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-3 text-foreground">Contact Information</h3>
+                    <h2 className="text-xl font-bold mb-3 text-foreground">Contact Information</h2>
                     <p className="text-muted-foreground/90 text-sm leading-relaxed mb-6">
                       Ready to discuss your project? Select a time for a growth call or send a written inquiry using the tabs.
                     </p>
@@ -83,7 +83,7 @@ const Contact = () => {
                         <Mail className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-foreground mb-1">Email Directly</h4>
+                        <h3 className="font-bold text-sm text-foreground mb-1">Email Directly</h3>
                         <a
                           href="mailto:ram@scalvex.in"
                           className="text-muted-foreground hover:text-accent transition-colors text-sm font-medium"
@@ -98,7 +98,7 @@ const Contact = () => {
                         <Clock className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-foreground mb-1">Response Time</h4>
+                        <h3 className="font-bold text-sm text-foreground mb-1">Response Time</h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                           We personally review all submissions and respond within 24 hours.
                         </p>
@@ -110,7 +110,7 @@ const Contact = () => {
                         <Shield className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-foreground mb-1">Actionable Review</h4>
+                        <h3 className="font-bold text-sm text-foreground mb-1">Actionable Review</h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                           Every inquiry includes a practical review of your current website visibility, structure, and user experience — even if we don’t end up working together.
                         </p>
@@ -135,7 +135,7 @@ const Contact = () => {
                     <Card className="border border-border/50 hover:border-accent/30 rounded-3xl bg-card/85 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden transition-colors duration-500">
                       <CardContent className="p-6 sm:p-8">
                         <div className="mb-6">
-                          <h3 className="text-lg font-bold text-foreground mb-1">Schedule a Strategy Call</h3>
+                          <h2 className="text-lg font-bold text-foreground mb-1">Schedule a Strategy Call</h2>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             Book a focused growth consultation directly with the founder to discuss visibility, website performance, positioning, and lead generation opportunities.
                           </p>
@@ -158,7 +158,7 @@ const Contact = () => {
                     <Card className="border border-border/50 hover:border-accent/30 rounded-3xl bg-card/85 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.02)] overflow-hidden transition-colors duration-500">
                       <CardContent className="p-6 sm:p-8">
                         <div className="mb-6">
-                          <h3 className="text-lg font-bold text-foreground mb-1">Send a Written Inquiry</h3>
+                          <h2 className="text-lg font-bold text-foreground mb-1">Send a Written Inquiry</h2>
                           <p className="text-sm text-muted-foreground leading-relaxed text-left mb-6">
                             Prefer to share details in writing? Complete the form below, and we'll analyze your current layout before getting back to you.
                           </p>

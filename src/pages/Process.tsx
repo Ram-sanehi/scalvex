@@ -195,10 +195,10 @@ const Process = () => {
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="bg-background/40 hover:bg-background/60 p-6 rounded-2xl border border-border/40 hover:border-accent/30 transition-all duration-300 relative group/card shadow-[0_2px_8px_-3px_rgba(0,0,0,0.02)]">
                           <div className="absolute -inset-px bg-gradient-to-br from-accent/[0.02] to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
-                          <h4 className="text-xs font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-1.5">
+                          <h3 className="text-xs font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-1.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                             What We Do
-                          </h4>
+                          </h3>
                           <ul className="space-y-2.5 list-none relative z-10">
                             {step.activities.map((activity, actIndex) => (
                               <li key={actIndex} className="flex items-start gap-2.5">
@@ -211,10 +211,10 @@ const Process = () => {
                         
                         <div className="bg-background/40 hover:bg-background/60 p-6 rounded-2xl border border-border/40 hover:border-accent/30 transition-all duration-300 relative group/card shadow-[0_2px_8px_-3px_rgba(0,0,0,0.02)]">
                           <div className="absolute -inset-px bg-gradient-to-br from-accent/[0.02] to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
-                          <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4 flex items-center gap-1.5">
+                          <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4 flex items-center gap-1.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/60" />
                             What You Provide
-                          </h4>
+                          </h3>
                           <ul className="space-y-2.5 list-none relative z-10">
                             {step.clientResponsibility.map((resp, respIndex) => (
                               <li key={respIndex} className="flex items-start gap-2.5">

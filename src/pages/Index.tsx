@@ -165,7 +165,7 @@ const processSteps = [
     {
       featured: true,
       title: 'Alpha Investment Management',
-      image: '/aim.png',
+      image: '/aim.webp',
       link: '/alphainvestmentcasestudy',
       type: 'Growth System',
       outcome: 'Built a modern investor-focused platform designed to improve trust, simplify information access, and generate higher-quality inbound inquiries.',
@@ -179,7 +179,7 @@ const processSteps = [
     {
       featured: true,
       title: 'Sanjh Boutique',
-      image: '/sanjhboutique.png',
+      image: '/sanjhboutique.webp',
       link: '/sanjhboutiquecasestudy',
       type: 'Brand Showroom',
       outcome: 'Rebuilt a high-end designer boutique experience, introducing interactive product quick views, custom styling accordion systems, and integrated Supabase-backed user authentication.',
@@ -193,7 +193,7 @@ const processSteps = [
     {
       featured: true,
       title: 'Nilkamal Interiors & Furnitures',
-      image: '/nilkamal.png',
+      image: '/nilkamal.webp',
       link: '/nilkamalinteriorscasestudy',
       type: 'Brand Showroom',
       outcome: 'Improved consultation inquiries by creating a premium visual experience that better showcased completed interior projects.',
@@ -207,7 +207,7 @@ const processSteps = [
     {
       featured: true,
       title: 'Archly Studios',
-      image: '/archly.png',
+      image: '/archly.webp',
       link: '/archlycasestudy',
       type: 'Local Visibility System',
       outcome: 'Improved local visibility and helped generate more direct inquiries through a structured, search-friendly portfolio website.',
@@ -392,7 +392,7 @@ const processSteps = [
                   </div>
                   <div className="pt-4 border-t border-border/80 flex items-center gap-4">
                     <div>
-                      <h4 className="font-bold text-foreground text-base">Ram Vishwakarma</h4>
+                      <h3 className="font-bold text-foreground text-base">Ram Vishwakarma</h3>
                       <p className="text-xs text-muted-foreground">Founder & Growth Strategist</p>
                     </div>
                     <Button variant="outline" size="sm" asChild className="ml-auto">
@@ -404,8 +404,11 @@ const processSteps = [
                 <div className="relative flex justify-center">
                   <div className="relative group max-w-[400px] w-full aspect-[4/5] rounded-2xl overflow-hidden border border-border/80 shadow-md hover:shadow-lg transition-all duration-300 bg-card flex items-center justify-center">
                     <img
-                      src="/founder.jpg"
+                      src="/founder.webp"
                       alt="Ram Vishwakarma, Founder of Scalvex"
+                      width="400"
+                      height="500"
+                      loading="lazy"
                       className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';

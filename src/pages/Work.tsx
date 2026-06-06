@@ -9,7 +9,7 @@ const Work = () => {
     {
       featured: true,
       title: 'Alpha Investment Management',
-      image: '/aim.png',
+      image: '/aim.webp',
       type: 'Case Study',
       context:
         'Digital platform for an investment advisory firm focused on trust, clarity, and performance.',
@@ -39,7 +39,7 @@ const Work = () => {
     {
       featured: true,
       title: 'Sanjh Boutique',
-      image: '/sanjhboutique.png',
+      image: '/sanjhboutique.webp',
       type: 'Case Study',
       context:
         'Luxury digital showroom and customer portal for a bespoke designer boutique.',
@@ -64,7 +64,7 @@ const Work = () => {
     {
       featured: true,
       title: 'Nilkamal Interiors & Furnitures',
-      image: '/nilkamal.png',
+      image: '/nilkamal.webp',
       type: 'Client Project',
       context:
         'A digital presence for an interior design and furniture business showcasing premium projects.',
@@ -89,7 +89,7 @@ const Work = () => {
     {
       featured: true,
       title: 'Archly',
-      image: '/archly.png',
+      image: '/archly.webp',
       type: 'Case Study',
       context:
         'A complete digital platform for architects to showcase projects and professional work.',
@@ -114,7 +114,7 @@ const Work = () => {
     {
       featured: true,
       title: 'AgriFresh',
-      image: '/agrifresh.png',
+      image: '/agrifresh.webp',
       type: 'Client Project',
       context:
         'E-commerce platform for fresh agricultural products with user accounts and payments.',
@@ -141,7 +141,7 @@ const Work = () => {
     {
       featured: true,
       title: 'FinanceHub',
-      image: '/financehub.png',
+      image: '/financehub.webp',
       type: 'Case Study',
       context:
         'AI-driven finance and loan management system for individuals and small businesses.',
